@@ -1,2 +1,3 @@
-# sparv-sbx-whisper-input
-Allow Sparv to take audio as input
+# sparv-sbx-whisper-import
+
+Allow Sparv to import audio as text with KB Whisper.

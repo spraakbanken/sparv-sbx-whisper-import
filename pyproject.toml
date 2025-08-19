@@ -1,7 +1,7 @@
 [project]
-name = "sparv-sbx-whisper-input"
+name = "sparv-sbx-whisper-import"
 version = "0.1.0"
-description = "Allow Sparv to take audio as input"
+description = "Allow Sparv to import audio as text with KB Whisper"
 readme = "README.md"
 authors = [
     { name = "Språkbanken Text", email = "sb-info@svenska.gu.se" },
@@ -15,4 +15,4 @@ requires = ["uv_build>=0.8.11,<0.9.0"]
 build-backend = "uv_build"
 
 [tool.uv.build-backend]
-module-name = "sbx_whisper_input"
+module-name = "sbx_whisper_import"
