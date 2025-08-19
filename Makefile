@@ -166,3 +166,15 @@ snapshot-update:
 	${INVENV} pytest --snapshot-update
 
 ### === project targets below this line ===
+examples:
+	test -d $@ || mkdir examples
+
+examples/audio:
+	test -d $@ || mkdir --parent $@
+
+download-audio: examples/audio/aspenstrom_varldsforklaring_aspenstrom.mp3
+
+examples/audio/aspenstrom_varldsforklaring_aspenstrom.mp3:
+	curl https://litteraturbanken.se/ljudochbild/wp-content/uploads/2019/11/aspenstrom_varldsforklaring_aspenstrom.mp3 --output "$@"
+
+prepare-examples: examples/audio download-audio
