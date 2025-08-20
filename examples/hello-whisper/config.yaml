@@ -1,0 +1,13 @@
+metadata:
+  id: hello-whisper
+  language: swe
+
+import:
+  text_annotation: text
+  importer: sbx_whisper_import:parse
+# sbx_whisper_import:
+
+xml_export:
+  annotations:
+    - text
+    - segment.token
