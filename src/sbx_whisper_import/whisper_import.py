@@ -1,3 +1,5 @@
+"""Sparv importer for using Whisper."""
+
 from sparv import api as sparv_api
 from sparv.api import Output, Source, SourceFilename, SourceStructure, Text
 
