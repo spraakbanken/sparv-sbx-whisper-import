@@ -52,6 +52,8 @@ jobs:
       - name: uv sync --dev
         run: uv sync --dev --all-packages --all-extras
 
+      - uses: federicocarboni/setup-ffmpeg@37062fbf7149fc5578d6c57e08aed62458b375d6 # v3.1.0
+
       - name: Prepare assets
         run: make prepare-assets
 
@@ -92,6 +94,9 @@ jobs:
       - name: uv sync --dev --upgrade
         if: hashFiles('uv.lock') != ''
         run: uv sync --dev --upgrade --all-packages --all-extras
+
+      - uses: federicocarboni/setup-ffmpeg@37062fbf7149fc5578d6c57e08aed62458b375d6 # v3.1.0
+        if: hashFiles('uv.lock') != ''
 
       - name: Prepare assets
         if: hashFiles('uv.lock') != ''
