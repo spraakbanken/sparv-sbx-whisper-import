@@ -4,6 +4,7 @@ import typing as t
 
 import torch
 from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
+from transformers.pipelines import AutomaticSpeechRecognitionPipeline
 
 
 class TranscribeChunk(t.TypedDict):
@@ -54,7 +55,7 @@ class HFWhisperImporter:
             "language": "sv",
         }
 
-        self._pipe = pipe
+        self._pipe: AutomaticSpeechRecognitionPipeline = pipe
         self._generate_kwargs = generate_kwargs
 
     def transcribe(self, audio_path: str) -> TranscribeResult:
@@ -66,7 +67,7 @@ class HFWhisperImporter:
         Returns:
             The transcribed text along with chunks.
         """
-        return self._pipe(audio_path, chunk_length_s=30, generate_kwargs=self._generate_kwargs, return_timestamps=True)
+        return self._pipe(audio_path, chunk_length_s=30, generate_kwargs=self._generate_kwargs, return_timestamps=True)  # type: ignore[return-value]
 
 
 if __name__ == "__main__":
