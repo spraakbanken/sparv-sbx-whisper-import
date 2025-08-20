@@ -21,7 +21,14 @@ class TranscribeResult(t.TypedDict):
 
 
 class HFWhisperImporter:
+    """Huggingface whisper importer."""
+
     def __init__(self, *, model_id: str) -> None:
+        """Huggingface importer using whisper.
+
+        Args:
+            model_id: name of the model to use.
+        """
         device = "cuda:0" if torch.cuda.is_available() else "cpu"
         torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
 
@@ -69,4 +76,4 @@ if __name__ == "__main__":
     audio_path = sys.argv[1]
 
     res = importer.transcribe(audio_path)
-    print(res)
+    print(res)  # noqa: T201
