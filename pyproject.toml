@@ -8,7 +8,14 @@ authors = [
     { name = "Kristoffer Andersson", email = "kristoffer.andersson@gu.se" },
 ]
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+ "sparv>=5.3.1",
+ "torch>=2.8.0",
+ "transformers>=4.55.2",
+]
+
+[project.entry-points."sparv.plugin"]
+sbx_whisper_import = "sbx_whisper_import"
 
 [build-system]
 requires = ["uv_build>=0.8.11,<0.9.0"]
