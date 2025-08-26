@@ -129,12 +129,52 @@ jobs:
       - name: make test
         run: make test
 
+  run-examples:
+    # This action chooses the oldest version of the dependencies permitted by Cargo.toml to ensure
+    # that this crate is compatible with the minimal version that this crate and its dependencies
+    # require. This will pickup issues where this create relies on functionality that was introduced
+    # later than the actual version specified (e.g., when we choose just a major version, but a
+    # method was added after this version).
+    #
+
+    runs-on: ubuntu-latest
+    name: ubuntu / 3.11 / run examples
+    steps:
+      - uses: actions/checkout@ff7abcd0c3c05ccf6adc123a8cd1fd4fb30fb493 # v5.0.0
+        with:
+          persist-credentials: false
+          submodules: true
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@c0e7e93474eb09a343746f2a2742979d0cba523c # v6.5.0
+        with:
+          version: ${{ env.UV_VERSION }}
+          enable-cache: true
+
+      - name: Set up Python ${{ env.MINIMUM_PYTHON_VERSION }}
+        id: setup-python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: ${{ env.MINIMUM_PYTHON_VERSION }}
+
+      - uses: federicocarboni/setup-ffmpeg@37062fbf7149fc5578d6c57e08aed62458b375d6 # v3.1.0
+
+      - name: install dependencies
+        run: make install-dev
+
+      - name: configure sparv
+        run: echo "" | .venv/bin/sparv setup
+
+      - name: make run-examples
+        run: make run-examples
+
   # https://github.com/marketplace/actions/alls-green#why used for branch protection checks
   test-check:
     if: always()
     needs:
       - coverage
       - minimal
+      - run-examples
     runs-on: ubuntu-latest
     permissions: {}
     steps:

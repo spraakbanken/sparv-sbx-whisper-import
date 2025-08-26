@@ -182,4 +182,4 @@ run-hello-whisper: examples/hello-whisper/export/xml_export.pretty/aspenstrom_va
 run-examples: run-hello-whisper
 
 examples/hello-whisper/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml: assets/aspenstrom_varldsforklaring_aspenstrom.mp3
-	${INVENV} cd examples/hello-whisper; sparv run --stats
+	cd examples/hello-whisper; ${INVENV} sparv run --stats
