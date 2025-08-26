@@ -4,6 +4,7 @@ import typing as t
 
 import torch
 from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
+from transformers.pipelines import AutomaticSpeechRecognitionPipeline
 
 
 class TranscribeChunk(t.TypedDict):
@@ -21,7 +22,14 @@ class TranscribeResult(t.TypedDict):
 
 
 class HFWhisperImporter:
+    """Huggingface whisper importer."""
+
     def __init__(self, *, model_id: str) -> None:
+        """Huggingface importer using whisper.
+
+        Args:
+            model_id: name of the model to use.
+        """
         device = "cuda:0" if torch.cuda.is_available() else "cpu"
         torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
 
@@ -47,7 +55,7 @@ class HFWhisperImporter:
             "language": "sv",
         }
 
-        self._pipe = pipe
+        self._pipe: AutomaticSpeechRecognitionPipeline = pipe
         self._generate_kwargs = generate_kwargs
 
     def transcribe(self, audio_path: str) -> TranscribeResult:
@@ -59,7 +67,7 @@ class HFWhisperImporter:
         Returns:
             The transcribed text along with chunks.
         """
-        return self._pipe(audio_path, chunk_length_s=30, generate_kwargs=self._generate_kwargs, return_timestamps=True)
+        return self._pipe(audio_path, chunk_length_s=30, generate_kwargs=self._generate_kwargs, return_timestamps=True)  # type: ignore[return-value]
 
 
 if __name__ == "__main__":
@@ -69,4 +77,4 @@ if __name__ == "__main__":
     audio_path = sys.argv[1]
 
     res = importer.transcribe(audio_path)
-    print(res)
+    print(res)  # noqa: T201
