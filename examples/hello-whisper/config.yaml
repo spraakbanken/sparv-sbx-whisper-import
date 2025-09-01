@@ -5,7 +5,10 @@ metadata:
 import:
   text_annotation: text
   importer: sbx_whisper_import:parse
-# sbx_whisper_import:
+
+sbx_whisper_import:
+  model_size: tiny
+  model_verbosity: standard
 
 xml_export:
   annotations:

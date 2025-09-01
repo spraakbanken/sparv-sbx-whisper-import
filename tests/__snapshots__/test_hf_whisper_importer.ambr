@@ -2,3 +2,9 @@
 # name: test_aspenstrom
   ' Världsförklaring. När jag kommer ut på trappan har jag solen i brösthöjd. Nog är det en morgon i juli, men en morgon i juli är det inte. Vintergatan har i natt passerat genom trädgården, försilvrat mina dillkronor och kvarlämnat en stjärna i varje DAC-kåpa. Hallis Khomeet har fastnat i en enbuske. Jag stöder mig på vetenskapenkapen när jag påstår Det är oförklarligt och oförklarligt i dess toftlösa, interstellära Sjunger en fågel som jag inte ser och vars namn jag inte känner Inte finns det himmelsdag, himmelsväggar. Men himmelsdag, himmelsväggar finns det nog som återskallar, återskänker. Jag har sett detta ljus förr.'
 # ---
+# name: test_invalid_model_size_raises_value_error
+  '<ExceptionInfo ValueError("Unknown model_size=\'huge\'.") tblen=2>'
+# ---
+# name: test_invalid_model_verbosity_raises_value_error
+  '<ExceptionInfo ValueError("Unsupported model_verbosity=\'subtitle\' for model_size=\'medium\'.") tblen=2>'
+# ---
