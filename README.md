@@ -6,6 +6,10 @@ Allow Sparv to import audio as text with KB Whisper.
 
 - `ffmpeg` installed.
 
+## Usage
+
+[!NOTE] Only one importer can be used and only one file type can be used.
+
 ## Metadata
 
 | Model Size | Model Verbosity | Model used                                                                | Revision used                              |
