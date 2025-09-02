@@ -56,8 +56,10 @@ def parse(
         curr_start = curr_end
 
     # Make up a text annotation surrounding the whole file
-    text_annotation = ["text", "utterance", "utterance:start", "utterance:end"]
+    text_annotation = ["text", "text:source_filename", "utterance", "utterance:start", "utterance:end"]
+    source_file_name = f"{source_file}.mp3"
     Output("text", source_file=source_file).write([(0, len(res["text"]))])
+    Output("text:source_filename", source_file=source_file).write([source_file_name])
     Output("utterance", source_file=source_file).write(utterance_spans)
     Output("utterance:start", source_file=source_file).write(utterance_starts)
     Output("utterance:end", source_file=source_file).write(utterance_ends)
