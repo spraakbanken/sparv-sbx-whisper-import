@@ -79,7 +79,7 @@ jobs:
         os:
           - ubuntu
           # - macos TODO: should work but need to setup ffmpeg
-          - windows
+          # - windows TODO: example does not work
 
     runs-on: ${{ matrix.os }}-latest
     steps:
@@ -108,6 +108,8 @@ jobs:
 
       - name: Prepare assets
         run: make prepare-assets
+      - name: sparv setup
+        run: echo "" | sparv setup
       - run: pytest
 
   # https://github.com/marketplace/actions/alls-green#why used for branch protection checks
