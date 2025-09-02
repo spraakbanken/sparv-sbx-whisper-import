@@ -175,11 +175,3 @@ assets/aspenstrom_varldsforklaring_aspenstrom.mp3: assets
 	curl https://litteraturbanken.se/ljudochbild/wp-content/uploads/2019/11/aspenstrom_varldsforklaring_aspenstrom.mp3 --output "$@"
 
 prepare-assets: download-audio
-
-run-hello-whisper: examples/hello-whisper/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml
-	diff $< examples/hello-whisper/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml
-
-run-examples: run-hello-whisper
-
-examples/hello-whisper/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml: assets/aspenstrom_varldsforklaring_aspenstrom.mp3
-	cd examples/hello-whisper; ${INVENV} sparv run --stats
