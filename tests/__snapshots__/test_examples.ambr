@@ -2,7 +2,7 @@
 # name: test_example_hello_whisper
   '''
   <?xml version='1.0' encoding='utf-8'?>
-  <text>
+  <text source_filename="aspenstrom_varldsforklaring_aspenstrom.mp3">
     <utterance end="6.0" start="0.0">
       <token>Världsförklaring</token>
       <token>.</token>
