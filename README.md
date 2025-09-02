@@ -10,6 +10,70 @@ Allow Sparv to import audio as text with KB Whisper.
 
 [!NOTE] Only one importer can be used and only one file type can be used.
 
+### Install
+
+Install in a virtual environment:
+
+```shell
+pip install sparv-sbx-whisper-import
+```
+
+or if you have installed [`sparv`](https://github.com/spraakbanken/sparv) with [`pipx`](https://pipx.pypa.io/latest/):
+
+```shell
+pipx inject sparv sparv-sbx-whisper-import
+```
+
+or if you have installed [`sparv`](https://github.com/spraakbanken/sparv) with [`uv-pipx`](https://github.com/pytgaen/uv-pipx):
+
+```shell
+uvpipx install sparv-sbx-whisper-import --inject sparv
+```
+
+### Annotations
+
+The following annotations are created:
+
+- `text`
+- `utterance` with attributes `start` and `end`, in seconds for the audio file.
+
+Sample output:
+
+```xml
+<?xml version='1.0' encoding='utf-8'?>
+<text>
+  <utterance end="6.0" start="0.0">
+    <token>Världsförklaring</token>
+    <token>.</token>
+  </utterance>
+</text>
+```
+
+### Configuration
+
+The default model size is `small` and the default verbosity is `standard`.
+
+To change the model size and/or model verbosity to use, add the following to your `config.yaml`:
+
+```yaml
+import:
+  text_annotation: text
+  # needed to use sbx_whisper_import
+  importer: sbx_whisper_import:parse
+
+sbx_whisper_import:
+  # One of "tiny", "base", "small", "medium" or "large"
+  model_size: small
+  # One of "subtitle", "standard" or "strict" (low verbosity to high verbosity)
+  # NOTE: model size "medium" does support the verbosity "subtitle"
+  model_verbosity: standard
+
+xml_export:
+  annotations:
+    - text
+    - segment.token
+```
+
 ## Metadata
 
 | Model Size | Model Verbosity | Model used                                                                | Revision used                              |
