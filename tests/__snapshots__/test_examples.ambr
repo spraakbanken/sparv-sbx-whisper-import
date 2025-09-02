@@ -1,5 +1,5 @@
 # serializer version: 1
-# name: test_example_hello_whisper
+# name: test_example_hello_whisper_mp3
   '''
   <?xml version='1.0' encoding='utf-8'?>
   <text source_filename="aspenstrom_varldsforklaring_aspenstrom.mp3">
