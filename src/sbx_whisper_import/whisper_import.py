@@ -43,7 +43,22 @@ def parse(
 
     Text(source_file).write(res["text"])
 
+    utterance_spans: list[tuple[int, int]] = []
+    utterance_starts: list[float] = []
+    utterance_ends: list[float] = []
+    curr_start: int = 0
+    curr_end: int = 0
+    for chunk in res["chunks"]:
+        utterance_starts.append(chunk["timestamp"][0])
+        utterance_ends.append(chunk["timestamp"][1])
+        curr_end += len(chunk["text"])
+        utterance_spans.append((curr_start, curr_end))
+        curr_start = curr_end
+
     # Make up a text annotation surrounding the whole file
-    text_annotation = "text"
-    Output(text_annotation, source_file=source_file).write([(0, len(res["text"]))])
-    SourceStructure(source_file).write([text_annotation])
+    text_annotation = ["text", "utterance", "utterance:start", "utterance:end"]
+    Output("text", source_file=source_file).write([(0, len(res["text"]))])
+    Output("utterance", source_file=source_file).write(utterance_spans)
+    Output("utterance:start", source_file=source_file).write(utterance_starts)
+    Output("utterance:end", source_file=source_file).write(utterance_ends)
+    SourceStructure(source_file).write(text_annotation)

@@ -64,6 +64,10 @@ jobs:
         if: hashFiles('uv.lock') != ''
         run: make prepare-assets
 
+      - name: sparv setup
+        if: hashFiles('uv.lock') != ''
+        run: echo "" | .venv/bin/sparv setup
+
       - name: make test
         if: hashFiles('uv.lock') != ''
         run: make test
