@@ -169,12 +169,36 @@ snapshot-update:
 assets:
 	test -d $@ || mkdir $@
 
-download-audio: assets/aspenstrom_varldsforklaring_aspenstrom.mp3
+download-audio: assets/aspenstrom_varldsforklaring_aspenstrom.mp3\
+	assets/aspenstrom_trappan_aspenstrom.mp3
 
 assets/aspenstrom_varldsforklaring_aspenstrom.mp3: assets
 	curl https://litteraturbanken.se/ljudochbild/wp-content/uploads/2019/11/aspenstrom_varldsforklaring_aspenstrom.mp3 --output "$@"
 
-assets/aspenstrom_varldsforklaring_aspenstrom.wav: assets/aspenstrom_varldsforklaring_aspenstrom.mp3
-	ffmpeg -i $< $@
+assets/aspenstrom_trappan_aspenstrom.mp3: assets
+	curl https://litteraturbanken.se/ljudochbild/wp-content/uploads/2019/11/aspenstrom_trappan_aspenstrom.mp3 --output "$@"
 
-prepare-assets: download-audio assets/aspenstrom_varldsforklaring_aspenstrom.wav
+assets/%.wav: assets/%.mp3
+	ffmpeg -i $< -y $@
+
+prepare-assets: download-audio\
+	assets/aspenstrom_varldsforklaring_aspenstrom.wav\
+	assets/aspenstrom_trappan_aspenstrom.wav
+
+test-aspenstrom-mp3:
+	rm -rf examples/aspenstrom-mp3/.snakemake examples/aspenstrom-mp3/export examples/aspenstrom-mp3/sparv-workdir
+	cd examples/aspenstrom-mp3; ${INVENV} sparv run --stats
+	diff examples/aspenstrom-mp3/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml\
+	    examples/aspenstrom-mp3/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml
+	diff examples/aspenstrom-mp3/export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.xml\
+	    examples/aspenstrom-mp3/expected_export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.gold.xml
+
+test-aspenstrom-wav:
+	rm -rf examples/aspenstrom-wav/.snakemake examples/aspenstrom-wav/export examples/aspenstrom-wav/sparv-workdir
+	cd examples/aspenstrom-wav; ${INVENV} sparv run --stats
+	diff examples/aspenstrom-wav/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml\
+	    examples/aspenstrom-wav/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml
+	diff examples/aspenstrom-wav/export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.xml\
+	    examples/aspenstrom-wav/expected_export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.gold.xml
+
+test-examples: test-aspenstrom-mp3 test-aspenstrom-wav
