@@ -59,10 +59,10 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - uses: federicocarboni/setup-ffmpeg@37062fbf7149fc5578d6c57e08aed62458b375d6 # v3.1.0
+
       - name: Prepare assets
         run: make prepare-assets
-
-      - uses: federicocarboni/setup-ffmpeg@37062fbf7149fc5578d6c57e08aed62458b375d6 # v3.1.0
 
       - name: Install dependencies
         run: make install-dev
