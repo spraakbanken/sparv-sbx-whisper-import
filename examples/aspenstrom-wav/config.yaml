@@ -1,0 +1,16 @@
+metadata:
+  id: aspenstrom-wav
+  language: swe
+
+import:
+  text_annotation: text
+  importer: sbx_whisper_import:parse_wav
+
+sbx_whisper_import:
+  model_size: tiny
+  model_verbosity: standard
+
+xml_export:
+  annotations:
+    - text
+    - segment.token

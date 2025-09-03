@@ -13,20 +13,6 @@ logger = sparv_api.get_logger(__name__)
     file_extension="mp3",
     outputs=["text"],
     text_annotation="text",
-    config=[
-        Config(
-            "sbx_whisper_import.model_size",
-            "small",
-            description="The size of the model. Defaults to 'small'",
-            datatype=str,
-        ),
-        Config(
-            "sbx_whisper_import.model_verbosity",
-            "standard",
-            description="The verbosity of the model. Defaults to 'standard'",
-            datatype=str,
-        ),
-    ],
 )
 def parse_mp3(
     source_file: SourceFilename = SourceFilename(),
@@ -41,6 +27,28 @@ def parse_mp3(
         model_size=model_size,
         model_verbosity=model_verbosity,
         extension=".mp3",
+    )
+
+
+@sparv_api.importer(
+    "Import audio from WAV with Whisper",
+    file_extension="wav",
+    outputs=["text"],
+    text_annotation="text",
+)
+def parse_wav(
+    source_file: SourceFilename = SourceFilename(),
+    source_dir: Source = Source(),
+    model_size: str = Config("sbx_whisper_import.model_size"),
+    model_verbosity: str = Config("sbx_whisper_import.model_verbosity"),
+) -> None:
+    """Transcribe wav file as input to Sparv."""
+    transcribe_audio(
+        source_file=source_file,
+        source_dir=source_dir,
+        model_size=model_size,
+        model_verbosity=model_verbosity,
+        extension=".wav",
     )
 
 

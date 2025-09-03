@@ -6,8 +6,8 @@ import sparv
 from syrupy.assertion import SnapshotAssertion
 
 
-@pytest.mark.parametrize("extension", ["mp3"])
-def test_example_aspenstrom_mp3(extension: str, snapshot: SnapshotAssertion) -> None:
+@pytest.mark.parametrize("extension", ["mp3", "wav"])
+def test_example_aspenstrom(extension: str, snapshot: SnapshotAssertion) -> None:
     example = f"examples/aspenstrom-{extension}"
     base_dir = Path(example)
     export_dir = base_dir / "export"
