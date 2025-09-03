@@ -9,7 +9,7 @@ logger = sparv_api.get_logger(__name__)
 
 
 @sparv_api.importer(
-    "Import audio with Whsiper",
+    "Import audio from MP3 with Whisper",
     file_extension="mp3",
     outputs=["text"],
     text_annotation="text",

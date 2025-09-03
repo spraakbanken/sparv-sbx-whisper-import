@@ -1,12 +1,15 @@
 import shutil
 from pathlib import Path
 
+import pytest
 import sparv
 from syrupy.assertion import SnapshotAssertion
 
 
-def test_example_hello_whisper_mp3(setup_sparv: None, snapshot: SnapshotAssertion) -> None:  # noqa: ARG001
-    base_dir = Path("examples/hello-whisper-mp3")
+@pytest.mark.parametrize("extension", ["mp3"])
+def test_example_aspenstrom_mp3(extension: str, snapshot: SnapshotAssertion) -> None:
+    example = f"examples/aspenstrom-{extension}"
+    base_dir = Path(example)
     export_dir = base_dir / "export"
     snakemake_dir = base_dir / ".snakemake"
     sparv_workdir = base_dir / "sparv-workdir"
@@ -17,7 +20,7 @@ def test_example_hello_whisper_mp3(setup_sparv: None, snapshot: SnapshotAssertio
     if sparv_workdir.exists():
         shutil.rmtree(sparv_workdir, ignore_errors=False)
 
-    args = ["--dir", "examples/hello-whisper-mp3", "run", "xml_export:pretty", "--log", "--cores", "1"]
+    args = ["--dir", example, "run", "xml_export:pretty", "--log", "--cores", "1"]
 
     with sparv.call(args) as sparv_call:
         for log_message in sparv_call:
