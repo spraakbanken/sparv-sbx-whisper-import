@@ -1,8 +1,159 @@
 # serializer version: 1
-# name: test_example_hello_whisper_mp3
+# name: test_example_aspenstrom[mp3]
   '''
   <?xml version='1.0' encoding='utf-8'?>
   <text source_filename="aspenstrom_varldsforklaring_aspenstrom.mp3">
+    <utterance end="6.0" start="0.0">
+      <token>Världsförklaring</token>
+      <token>.</token>
+    </utterance>
+    <utterance end="18.0" start="11.0">
+      <token>När</token>
+      <token>jag</token>
+      <token>kommer</token>
+      <token>ut</token>
+      <token>på</token>
+      <token>trappan</token>
+      <token>har</token>
+      <token>jag</token>
+      <token>solen</token>
+      <token>i</token>
+      <token>brösthöjd</token>
+      <token>.</token>
+    </utterance>
+    <utterance end="25.62" start="18.0">
+      <token>Nog</token>
+      <token>är</token>
+      <token>det</token>
+      <token>en</token>
+      <token>morgon</token>
+      <token>i</token>
+      <token>juli</token>
+      <token>,</token>
+      <token>men</token>
+      <token>en</token>
+      <token>morgon</token>
+      <token>i</token>
+      <token>juli</token>
+      <token>är</token>
+      <token>det</token>
+      <token>inte</token>
+      <token>.</token>
+    </utterance>
+    <utterance end="31.76" start="27.16">
+      <token>Vintergatan</token>
+      <token>har</token>
+      <token>i</token>
+      <token>natt</token>
+      <token>passerat</token>
+      <token>genom</token>
+      <token>trädgården</token>
+      <token>,</token>
+    </utterance>
+    <utterance end="37.92" start="32.02">
+      <token>försilvrat</token>
+      <token>mina</token>
+      <token>dillkronor</token>
+      <token>och</token>
+      <token>kvarlämnat</token>
+      <token>en</token>
+      <token>stjärna</token>
+      <token>i</token>
+      <token>varje</token>
+      <token>DAC-kåpa</token>
+      <token>.</token>
+    </utterance>
+    <utterance end="41.24" start="38.68">
+      <token>Hallis</token>
+      <token>Khomeet</token>
+      <token>har</token>
+      <token>fastnat</token>
+      <token>i</token>
+      <token>en</token>
+      <token>enbuske</token>
+      <token>.</token>
+    </utterance>
+    <utterance end="47.72" start="44.06">
+      <token>Jag</token>
+      <token>stöder</token>
+      <token>mig</token>
+      <token>på</token>
+      <token>vetenskapenkapen</token>
+      <token>när</token>
+      <token>jag</token>
+      <token>påstår</token>
+    </utterance>
+    <utterance end="52.16" start="47.88">
+      <token>Det</token>
+      <token>är</token>
+      <token>oförklarligt</token>
+      <token>och</token>
+      <token>oförklarligt</token>
+    </utterance>
+    <utterance end="56.28" start="52.32">
+      <token>i</token>
+      <token>dess</token>
+      <token>toftlösa</token>
+      <token>,</token>
+      <token>interstellära</token>
+    </utterance>
+    <utterance end="60.36" start="56.44">
+      <token>Sjunger</token>
+      <token>en</token>
+      <token>fågel</token>
+      <token>som</token>
+      <token>jag</token>
+      <token>inte</token>
+      <token>ser</token>
+    </utterance>
+    <utterance end="64.6" start="60.52">
+      <token>och</token>
+      <token>vars</token>
+      <token>namn</token>
+      <token>jag</token>
+      <token>inte</token>
+      <token>känner</token>
+    </utterance>
+    <utterance end="68.18" start="64.76">
+      <token>Inte</token>
+      <token>finns</token>
+      <token>det</token>
+      <token>himmelsdag</token>
+      <token>,</token>
+      <token>himmelsväggar</token>
+      <token>.</token>
+    </utterance>
+    <utterance end="77.14" start="68.7">
+      <token>Men</token>
+      <token>himmelsdag</token>
+      <token>,</token>
+      <token>himmelsväggar</token>
+      <token>finns</token>
+      <token>det</token>
+      <token>nog</token>
+      <token>som</token>
+      <token>återskallar</token>
+      <token>,</token>
+      <token>återskänker</token>
+      <token>.</token>
+    </utterance>
+    <utterance end="81.5" start="78.16">
+      <token>Jag</token>
+      <token>har</token>
+      <token>sett</token>
+      <token>detta</token>
+      <token>ljus</token>
+      <token>förr</token>
+      <token>.</token>
+    </utterance>
+  </text>
+  
+  '''
+# ---
+# name: test_example_aspenstrom[wav]
+  '''
+  <?xml version='1.0' encoding='utf-8'?>
+  <text source_filename="aspenstrom_varldsforklaring_aspenstrom.wav">
     <utterance end="6.0" start="0.0">
       <token>Världsförklaring</token>
       <token>.</token>
