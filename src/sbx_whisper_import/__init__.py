@@ -2,9 +2,9 @@
 
 from sparv.api import Config
 
-from sbx_whisper_import.whisper_import import parse_mp3, parse_wav
+from sbx_whisper_import.whisper_import import parse_mp3, parse_ogg, parse_wav
 
-__all__ = ["parse_mp3", "parse_wav"]
+__all__ = ["parse_mp3", "parse_ogg", "parse_wav"]
 
 __config__ = [
     Config(

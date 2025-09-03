@@ -31,6 +31,28 @@ def parse_mp3(
 
 
 @sparv_api.importer(
+    "Import audio from OGG with Whisper",
+    file_extension="ogg",
+    outputs=["text"],
+    text_annotation="text",
+)
+def parse_ogg(
+    source_file: SourceFilename = SourceFilename(),
+    source_dir: Source = Source(),
+    model_size: str = Config("sbx_whisper_import.model_size"),
+    model_verbosity: str = Config("sbx_whisper_import.model_verbosity"),
+) -> None:
+    """Transcribe ogg file as input to Sparv."""
+    transcribe_audio(
+        source_file=source_file,
+        source_dir=source_dir,
+        model_size=model_size,
+        model_verbosity=model_verbosity,
+        extension=".ogg",
+    )
+
+
+@sparv_api.importer(
     "Import audio from WAV with Whisper",
     file_extension="wav",
     outputs=["text"],

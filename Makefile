@@ -181,9 +181,14 @@ assets/aspenstrom_trappan_aspenstrom.mp3: assets
 assets/%.wav: assets/%.mp3
 	ffmpeg -i $< -y $@
 
+assets/%.ogg: assets/%.mp3
+	ffmpeg -i $< -y $@
+
 prepare-assets: download-audio\
 	assets/aspenstrom_varldsforklaring_aspenstrom.wav\
-	assets/aspenstrom_trappan_aspenstrom.wav
+	assets/aspenstrom_trappan_aspenstrom.wav\
+	assets/aspenstrom_varldsforklaring_aspenstrom.ogg\
+	assets/aspenstrom_trappan_aspenstrom.ogg
 
 test-aspenstrom-mp3:
 	rm -rf examples/aspenstrom-mp3/.snakemake examples/aspenstrom-mp3/export examples/aspenstrom-mp3/sparv-workdir
@@ -192,6 +197,14 @@ test-aspenstrom-mp3:
 	    examples/aspenstrom-mp3/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml
 	diff examples/aspenstrom-mp3/export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.xml\
 	    examples/aspenstrom-mp3/expected_export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.gold.xml
+
+test-aspenstrom-ogg:
+	rm -rf examples/aspenstrom-ogg/.snakemake examples/aspenstrom-ogg/export examples/aspenstrom-ogg/sparv-workdir
+	cd examples/aspenstrom-ogg; ${INVENV} sparv run --stats
+	diff examples/aspenstrom-ogg/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml\
+	    examples/aspenstrom-ogg/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml
+	diff examples/aspenstrom-ogg/export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.xml\
+	    examples/aspenstrom-ogg/expected_export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.gold.xml
 
 test-aspenstrom-wav:
 	rm -rf examples/aspenstrom-wav/.snakemake examples/aspenstrom-wav/export examples/aspenstrom-wav/sparv-workdir
