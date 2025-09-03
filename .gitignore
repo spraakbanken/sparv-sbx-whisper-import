@@ -208,4 +208,5 @@ marimo/_lsp/
 __marimo__/
 
 # Examples
-assets/aspenstrom_varldsforklaring_aspenstrom.mp3
+assets/aspenstrom_varldsforklaring_aspenstrom.*
+assets/aspenstrom_trappan_aspenstrom.*

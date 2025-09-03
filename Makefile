@@ -169,17 +169,49 @@ snapshot-update:
 assets:
 	test -d $@ || mkdir $@
 
-download-audio: assets/aspenstrom_varldsforklaring_aspenstrom.mp3
+download-audio: assets/aspenstrom_varldsforklaring_aspenstrom.mp3\
+	assets/aspenstrom_trappan_aspenstrom.mp3
 
 assets/aspenstrom_varldsforklaring_aspenstrom.mp3: assets
 	curl https://litteraturbanken.se/ljudochbild/wp-content/uploads/2019/11/aspenstrom_varldsforklaring_aspenstrom.mp3 --output "$@"
 
-prepare-assets: download-audio
+assets/aspenstrom_trappan_aspenstrom.mp3: assets
+	curl https://litteraturbanken.se/ljudochbild/wp-content/uploads/2019/11/aspenstrom_trappan_aspenstrom.mp3 --output "$@"
 
-run-hello-whisper: examples/hello-whisper/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml
-	diff $< examples/hello-whisper/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml
+assets/%.wav: assets/%.mp3
+	ffmpeg -i $< -y $@
 
-run-examples: run-hello-whisper
+assets/%.ogg: assets/%.mp3
+	ffmpeg -i $< -y $@
 
-examples/hello-whisper/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml: assets/aspenstrom_varldsforklaring_aspenstrom.mp3
-	cd examples/hello-whisper; ${INVENV} sparv run --stats
+prepare-assets: download-audio\
+	assets/aspenstrom_varldsforklaring_aspenstrom.wav\
+	assets/aspenstrom_trappan_aspenstrom.wav\
+	assets/aspenstrom_varldsforklaring_aspenstrom.ogg\
+	assets/aspenstrom_trappan_aspenstrom.ogg
+
+test-aspenstrom-mp3:
+	rm -rf examples/aspenstrom-mp3/.snakemake examples/aspenstrom-mp3/export examples/aspenstrom-mp3/sparv-workdir
+	cd examples/aspenstrom-mp3; ${INVENV} sparv run --stats
+	diff examples/aspenstrom-mp3/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml\
+	    examples/aspenstrom-mp3/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml
+	diff examples/aspenstrom-mp3/export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.xml\
+	    examples/aspenstrom-mp3/expected_export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.gold.xml
+
+test-aspenstrom-ogg:
+	rm -rf examples/aspenstrom-ogg/.snakemake examples/aspenstrom-ogg/export examples/aspenstrom-ogg/sparv-workdir
+	cd examples/aspenstrom-ogg; ${INVENV} sparv run --stats
+	diff examples/aspenstrom-ogg/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml\
+	    examples/aspenstrom-ogg/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml
+	diff examples/aspenstrom-ogg/export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.xml\
+	    examples/aspenstrom-ogg/expected_export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.gold.xml
+
+test-aspenstrom-wav:
+	rm -rf examples/aspenstrom-wav/.snakemake examples/aspenstrom-wav/export examples/aspenstrom-wav/sparv-workdir
+	cd examples/aspenstrom-wav; ${INVENV} sparv run --stats
+	diff examples/aspenstrom-wav/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml\
+	    examples/aspenstrom-wav/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml
+	diff examples/aspenstrom-wav/export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.xml\
+	    examples/aspenstrom-wav/expected_export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.gold.xml
+
+test-examples: test-aspenstrom-mp3 test-aspenstrom-wav

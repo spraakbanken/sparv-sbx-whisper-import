@@ -1,10 +1,10 @@
 metadata:
-  id: hello-whisper
+  id: aspenstrom-mp3
   language: swe
 
 import:
   text_annotation: text
-  importer: sbx_whisper_import:parse
+  importer: sbx_whisper_import:parse_mp3
 
 sbx_whisper_import:
   model_size: tiny

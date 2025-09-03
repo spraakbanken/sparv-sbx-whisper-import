@@ -9,39 +9,105 @@ logger = sparv_api.get_logger(__name__)
 
 
 @sparv_api.importer(
-    "Import audio with Whsiper",
+    "Import audio from MP3 with Whisper",
     file_extension="mp3",
     outputs=["text"],
     text_annotation="text",
-    config=[
-        Config(
-            "sbx_whisper_import.model_size",
-            "small",
-            description="The size of the model. Defaults to 'small'",
-            datatype=str,
-        ),
-        Config(
-            "sbx_whisper_import.model_verbosity",
-            "standard",
-            description="The verbosity of the model. Defaults to 'standard'",
-            datatype=str,
-        ),
-    ],
 )
-def parse(
+def parse_mp3(
     source_file: SourceFilename = SourceFilename(),
     source_dir: Source = Source(),
     model_size: str = Config("sbx_whisper_import.model_size"),
     model_verbosity: str = Config("sbx_whisper_import.model_verbosity"),
 ) -> None:
+    """Transcribe mp3 file as input to Sparv."""
+    transcribe_audio(
+        source_file=source_file,
+        source_dir=source_dir,
+        model_size=model_size,
+        model_verbosity=model_verbosity,
+        extension=".mp3",
+    )
+
+
+@sparv_api.importer(
+    "Import audio from OGG with Whisper",
+    file_extension="ogg",
+    outputs=["text"],
+    text_annotation="text",
+)
+def parse_ogg(
+    source_file: SourceFilename = SourceFilename(),
+    source_dir: Source = Source(),
+    model_size: str = Config("sbx_whisper_import.model_size"),
+    model_verbosity: str = Config("sbx_whisper_import.model_verbosity"),
+) -> None:
+    """Transcribe ogg file as input to Sparv."""
+    transcribe_audio(
+        source_file=source_file,
+        source_dir=source_dir,
+        model_size=model_size,
+        model_verbosity=model_verbosity,
+        extension=".ogg",
+    )
+
+
+@sparv_api.importer(
+    "Import audio from WAV with Whisper",
+    file_extension="wav",
+    outputs=["text"],
+    text_annotation="text",
+)
+def parse_wav(
+    source_file: SourceFilename = SourceFilename(),
+    source_dir: Source = Source(),
+    model_size: str = Config("sbx_whisper_import.model_size"),
+    model_verbosity: str = Config("sbx_whisper_import.model_verbosity"),
+) -> None:
+    """Transcribe wav file as input to Sparv."""
+    transcribe_audio(
+        source_file=source_file,
+        source_dir=source_dir,
+        model_size=model_size,
+        model_verbosity=model_verbosity,
+        extension=".wav",
+    )
+
+
+def transcribe_audio(
+    source_file: SourceFilename,
+    source_dir: Source,
+    model_size: str,
+    model_verbosity: str,
+    extension: str,
+) -> None:
     """Transcribe audio file as input to Sparv."""
+    text, utterance_spans, utterance_starts, utterance_ends = _transcribe_and_prepare_spans(
+        model_size, model_verbosity, str(source_dir.get_path(source_file, extension))
+    )
+
+    # Make up a text annotation surrounding the whole file
+    text_annotation = ["text", "text:source_filename", "utterance", "utterance:start", "utterance:end"]
+    source_file_name = f"{source_file}{extension}"
+
+    # Write output
+    Text(source_file).write(text)
+    Output("text", source_file=source_file).write([(0, len(text))])
+    Output("text:source_filename", source_file=source_file).write([source_file_name])
+    Output("utterance", source_file=source_file).write(utterance_spans)
+    Output("utterance:start", source_file=source_file).write(utterance_starts)
+    Output("utterance:end", source_file=source_file).write(utterance_ends)
+    SourceStructure(source_file).write(text_annotation)
+
+
+def _transcribe_and_prepare_spans(
+    model_size: str, model_verbosity: str, source_filename: str
+) -> tuple[str, list[tuple[int, int]], list[float], list[float]]:
     importer = HFWhisperImporter(model_size=model_size, model_verbosity=model_verbosity)
 
-    res = importer.transcribe(str(source_dir.get_path(source_file, ".mp3")))
+    res = importer.transcribe(source_filename)
 
     logger.debug("res=%s", res)
-
-    Text(source_file).write(res["text"])
 
     utterance_spans: list[tuple[int, int]] = []
     utterance_starts: list[float] = []
@@ -55,12 +121,4 @@ def parse(
         utterance_spans.append((curr_start, curr_end))
         curr_start = curr_end
 
-    # Make up a text annotation surrounding the whole file
-    text_annotation = ["text", "text:source_filename", "utterance", "utterance:start", "utterance:end"]
-    source_file_name = f"{source_file}.mp3"
-    Output("text", source_file=source_file).write([(0, len(res["text"]))])
-    Output("text:source_filename", source_file=source_file).write([source_file_name])
-    Output("utterance", source_file=source_file).write(utterance_spans)
-    Output("utterance:start", source_file=source_file).write(utterance_starts)
-    Output("utterance:end", source_file=source_file).write(utterance_ends)
-    SourceStructure(source_file).write(text_annotation)
+    return res["text"], utterance_spans, utterance_starts, utterance_ends
