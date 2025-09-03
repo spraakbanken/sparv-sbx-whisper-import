@@ -28,16 +28,33 @@ logger = sparv_api.get_logger(__name__)
         ),
     ],
 )
-def parse(
+def parse_mp3(
     source_file: SourceFilename = SourceFilename(),
     source_dir: Source = Source(),
     model_size: str = Config("sbx_whisper_import.model_size"),
     model_verbosity: str = Config("sbx_whisper_import.model_verbosity"),
 ) -> None:
+    """Transcribe mp3 file as input to Sparv."""
+    transcribe_audio(
+        source_file=source_file,
+        source_dir=source_dir,
+        model_size=model_size,
+        model_verbosity=model_verbosity,
+        extension=".mp3",
+    )
+
+
+def transcribe_audio(
+    source_file: SourceFilename,
+    source_dir: Source,
+    model_size: str,
+    model_verbosity: str,
+    extension: str,
+) -> None:
     """Transcribe audio file as input to Sparv."""
     importer = HFWhisperImporter(model_size=model_size, model_verbosity=model_verbosity)
 
-    res = importer.transcribe(str(source_dir.get_path(source_file, ".mp3")))
+    res = importer.transcribe(str(source_dir.get_path(source_file, extension)))
 
     logger.debug("res=%s", res)
 
@@ -57,7 +74,7 @@ def parse(
 
     # Make up a text annotation surrounding the whole file
     text_annotation = ["text", "text:source_filename", "utterance", "utterance:start", "utterance:end"]
-    source_file_name = f"{source_file}.mp3"
+    source_file_name = f"{source_file}{extension}"
     Output("text", source_file=source_file).write([(0, len(res["text"]))])
     Output("text:source_filename", source_file=source_file).write([source_file_name])
     Output("utterance", source_file=source_file).write(utterance_spans)

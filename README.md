@@ -59,7 +59,7 @@ To change the model size and/or model verbosity to use, add the following to you
 import:
   text_annotation: text
   # needed to use sbx_whisper_import
-  importer: sbx_whisper_import:parse
+  importer: sbx_whisper_import:parse_mp3
 
 sbx_whisper_import:
   # One of "tiny", "base", "small", "medium" or "large"
