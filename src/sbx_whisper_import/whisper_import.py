@@ -60,13 +60,32 @@ def transcribe_audio(
     extension: str,
 ) -> None:
     """Transcribe audio file as input to Sparv."""
+    text, utterance_spans, utterance_starts, utterance_ends = _transcribe_and_prepare_spans(
+        model_size, model_verbosity, str(source_dir.get_path(source_file, extension))
+    )
+
+    # Make up a text annotation surrounding the whole file
+    text_annotation = ["text", "text:source_filename", "utterance", "utterance:start", "utterance:end"]
+    source_file_name = f"{source_file}{extension}"
+
+    # Write output
+    Text(source_file).write(text)
+    Output("text", source_file=source_file).write([(0, len(text))])
+    Output("text:source_filename", source_file=source_file).write([source_file_name])
+    Output("utterance", source_file=source_file).write(utterance_spans)
+    Output("utterance:start", source_file=source_file).write(utterance_starts)
+    Output("utterance:end", source_file=source_file).write(utterance_ends)
+    SourceStructure(source_file).write(text_annotation)
+
+
+def _transcribe_and_prepare_spans(
+    model_size: str, model_verbosity: str, source_filename: str
+) -> tuple[str, list[tuple[int, int]], list[float], list[float]]:
     importer = HFWhisperImporter(model_size=model_size, model_verbosity=model_verbosity)
 
-    res = importer.transcribe(str(source_dir.get_path(source_file, extension)))
+    res = importer.transcribe(source_filename)
 
     logger.debug("res=%s", res)
-
-    Text(source_file).write(res["text"])
 
     utterance_spans: list[tuple[int, int]] = []
     utterance_starts: list[float] = []
@@ -80,12 +99,4 @@ def transcribe_audio(
         utterance_spans.append((curr_start, curr_end))
         curr_start = curr_end
 
-    # Make up a text annotation surrounding the whole file
-    text_annotation = ["text", "text:source_filename", "utterance", "utterance:start", "utterance:end"]
-    source_file_name = f"{source_file}{extension}"
-    Output("text", source_file=source_file).write([(0, len(res["text"]))])
-    Output("text:source_filename", source_file=source_file).write([source_file_name])
-    Output("utterance", source_file=source_file).write(utterance_spans)
-    Output("utterance:start", source_file=source_file).write(utterance_starts)
-    Output("utterance:end", source_file=source_file).write(utterance_ends)
-    SourceStructure(source_file).write(text_annotation)
+    return res["text"], utterance_spans, utterance_starts, utterance_ends
