@@ -1,0 +1,40 @@
+id: sbx-swe-speech2text-transformers-kb_whisper
+languages_codes:
+  - swe
+keywords:
+  - whisper
+  - transformers
+  - huggingface
+tools:
+  - name: "transformers"
+    url: "https://github.com/huggingface/transformers"
+    license: "Apache-2.0 license"
+models:
+  - name: "KBLab/kb-whisper-tiny"
+    url: "https:/huggingface.co/KBLab/kb-whisper-tiny"
+    description: |-
+      The National Library of Sweden releases a new suite of Whisper models trained
+      on over 50,000 hours of Swedish speech.
+    license: "Apache-2.0 license"
+other_references:
+  - "Swedish Whispers; Leveraging a Massive Speech Corpus for Swedish Speech Recognition - Vesterbacka et al - 2025 - Interspeech 2025, p758-762 - doi: 10.21437/Interspeech.2025-2646"
+short_description:
+  swe: Transkription av ljudfil till text med transformers och KB-Whisper för svenska.
+  eng: Transcribing audio file to text by transformers and KB-Whisper for Swedish
+created: 2025-09-04
+annotations:
+  - text
+  - text:source_filename
+  - utterance
+  - utterance:start
+  - utterance:end
+example_output: |-
+  ```xml
+  <?xml version='1.0' encoding='utf-8'?>
+  <text>
+  <utterance end="6.0" start="0.0">Världsförklaring</utterance>
+  </text>
+  ```
+plugin_url: https://github.com/spraakbanken/sparv-sbx-whisper-import
+type: analysis
+license: MIT license
