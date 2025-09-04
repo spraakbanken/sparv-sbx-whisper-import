@@ -1,6 +1,15 @@
 # sparv-sbx-whisper-import
 
-Allow Sparv to import audio as text with KB Whisper.
+[![PyPI version](https://badge.fury.io/py/sparv-sbx-whisper-import.svg)](https://pypi.org/project/sparv-sbx-whisper-import)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/sparv-sbx-whisper-import)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/sparv-sbx-whisper-import)](https://pypi.org/project/sparv-sbx-whisper-import/)
+
+[![Maturity badge - level 2](https://img.shields.io/badge/Maturity-Level%202%20--%20First%20Release-yellowgreen.svg)](https://github.com/spraakbanken/getting-started/blob/main/scorecard.md)
+[![Stage](https://img.shields.io/pypi/status/sparv-sbx-whisper-import)](https://pypi.org/project/sparv-sbx-whisper-import/)
+
+[![CI(release)](https://github.com/spraakbanken/sparv-sbx-whisper-import/actions/workflows/release.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-whisper-import/actions/workflows/release.yml)
+
+Allow [Sparv](https://github.com/spraakbanken/sparv) to import audio as text with [KB Whisper](https://huggingface.co/KBLab/kb-whisper-small).
 
 ## Prerequisites
 
@@ -8,7 +17,7 @@ Allow Sparv to import audio as text with KB Whisper.
 
 ## Usage
 
-[!NOTE] Only one importer can be used and only one file type can be used.
+![NOTE] Only one importer can be used and only one file type can be used.
 
 ### Install
 
@@ -29,6 +38,21 @@ or if you have installed [`sparv`](https://github.com/spraakbanken/sparv) with [
 ```shell
 uvpipx install sparv-sbx-whisper-import --inject sparv
 ```
+
+### Supported audio formats
+
+![NOTE] Only one importer can be used and only one file type can be used.
+
+The following audio formats are supported:
+
+| Audio format | Importer (in config)           |
+| ------------ | ------------------------------ |
+| **MP3**      | `sbx_whisper_import:parse_mp3` |
+| **OGG**      | `sbx_whisper_import:parse_ogg` |
+| **WAV**      | `sbx_whisper_import:parse_wav` |
+
+Do you miss some audio format?
+Please look at the [tracking issue](https://github.com/spraakbanken/sparv-sbx-whisper-import/issues/16) or create a new issue.
 
 ### Annotations
 
@@ -58,8 +82,10 @@ To change the model size and/or model verbosity to use, add the following to you
 ```yaml
 import:
   text_annotation: text
-  # needed to use sbx_whisper_import
+  # needed to use sbx_whisper_import, use one of the lines below
   importer: sbx_whisper_import:parse_mp3
+  # importer: sbx_whisper_import:parse_ogg
+  # importer: sbx_whisper_import:parse_wav
 
 sbx_whisper_import:
   # One of "tiny", "base", "small", "medium" or "large"
@@ -93,3 +119,14 @@ xml_export:
 | `large`    | `subtitle`      | [KBLab/kb-whisper-large](https://huggingface.co/KBLab/kb-whisper-large)   | `50b62f493fa513926007d388f76cce9659bce123` |
 | `large`    | `standard`      | [KBLab/kb-whisper-large](https://huggingface.co/KBLab/kb-whisper-large)   | `9e03cd21c14d02c57c33ae90b5803b54995ff241` |
 | `large`    | `strict`        | [KBLab/kb-whisper-large](https://huggingface.co/KBLab/kb-whisper-large)   | `ea0a8ac1cda8eab8777bf8d74440eb7606825d8f` |
+
+## Changelog
+
+This project keeps a [changelog](./CHANGELOG.md).
+
+## Minimum supported Pyhton version
+
+This library tries to support as many Python versions as possible.
+When a Python version is added or dropped, this library's minor version is bumped.
+
+- v0.1.0: Python 3.11
