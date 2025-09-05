@@ -17,7 +17,8 @@ Allow [Sparv](https://github.com/spraakbanken/sparv) to import audio as text wit
 
 ## Usage
 
-![NOTE] Only one importer can be used and only one file type can be used.
+> [!NOTE]
+> Only one importer can be used and only one file type can be used.
 
 ### Install
 
@@ -41,7 +42,8 @@ uvpipx install sparv-sbx-whisper-import --inject sparv
 
 ### Supported audio formats
 
-![NOTE] Only one importer can be used and only one file type can be used.
+> [!NOTE]
+> Only one importer can be used and only one file type can be used.
 
 The following audio formats are supported:
 
