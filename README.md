@@ -9,16 +9,13 @@
 
 [![CI(release)](https://github.com/spraakbanken/sparv-sbx-whisper-import/actions/workflows/release.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-whisper-import/actions/workflows/release.yml)
 
-Allow [Sparv](https://github.com/spraakbanken/sparv) to import audio as text with [KB Whisper](https://huggingface.co/KBLab/kb-whisper-small).
+This [Sparv](https://github.com/spraakbanken/sparv) plugin makes it possible to use audio files as input to Sparv. The audio is transcribed to text using [transformers](https://github.com/huggingface/transformers) and the [KB Whisper models](https://huggingface.co/KBLab/kb-whisper-small).
 
 ## Prerequisites
 
-- `ffmpeg` installed.
-
-## Usage
-
-> [!NOTE]
-> Only one importer can be used and only one file type can be used.
+- Python 3.11 or higher
+- [Sparv](https://github.com/spraakbanken/sparv)
+- [`ffmpeg`](https://ffmpeg.org/) installed and available in your `PATH`
 
 ### Install
 
@@ -40,10 +37,20 @@ or if you have installed [`sparv`](https://github.com/spraakbanken/sparv) with [
 uvpipx install sparv-sbx-whisper-import --inject sparv
 ```
 
+## Usage
+
+To use audio files as input to Sparv, first create a corpus and a Sparv configuration file. For more information about creating a corpus, see the [Sparv documentation](https://spraakbanken.gu.se/sparv/user-manual/intro/). Possible configuration options are described [below](#configuration).
+
+Once your corpus and configuration file are set up, [run Sparv as usual](https://spraakbanken.gu.se/sparv/user-manual/running-sparv/):
+
+```shell
+sparv run
+```
+
 ### Supported audio formats
 
 > [!NOTE]
-> Only one importer can be used and only one file type can be used.
+> Only one file type and one importer can be used within a corpus. If you want to process multiple file types, please create separate corpora.
 
 The following audio formats are supported:
 
@@ -54,32 +61,13 @@ The following audio formats are supported:
 | **WAV**      | `sbx_whisper_import:parse_wav` |
 
 Do you miss some audio format?
-Please look at the [tracking issue](https://github.com/spraakbanken/sparv-sbx-whisper-import/issues/16) or create a new issue.
-
-### Annotations
-
-The following annotations are created:
-
-- `text`
-- `utterance` with attributes `start` and `end`, in seconds for the audio file.
-
-Sample output:
-
-```xml
-<?xml version='1.0' encoding='utf-8'?>
-<text>
-  <utterance end="6.0" start="0.0">
-    <token>Världsförklaring</token>
-    <token>.</token>
-  </utterance>
-</text>
-```
+Please check the [tracking issue](https://github.com/spraakbanken/sparv-sbx-whisper-import/issues/16) or open a new issue to request support for additional formats.
 
 ### Configuration
 
-The default model size is `small` and the default verbosity is `standard`.
+To use this plugin, specify the appropriate importer for your audio files in the Sparv configuration file (`config.yaml`).
 
-To change the model size and/or model verbosity to use, add the following to your `config.yaml`:
+The default model size is `small` and the default verbosity is `standard`. You can change these settings as described below.
 
 ```yaml
 import:
@@ -96,13 +84,34 @@ sbx_whisper_import:
   # NOTE: model size "medium" does support the verbosity "subtitle"
   model_verbosity: standard
 
-xml_export:
+export:
   annotations:
     - text
-    - segment.token
+    - <token>
+```
+
+### Annotations
+
+The following annotations are created by the plugin:
+
+- `text` with the attribute `source_filename`, which indicates the name of the audio file from which the text was transcribed.
+- `utterance` with the attributes `start` and `end`, which indicate the timestamps (in seconds) of the utterance within the audio file.
+
+Sample output:
+
+```xml
+<?xml version='1.0' encoding='utf-8'?>
+<text source_filename="example.mp3">
+  <utterance end="6.0" start="0.0">
+    <token>Världsförklaring</token>
+    <token>.</token>
+  </utterance>
+</text>
 ```
 
 ## Metadata
+
+The following table lists the exact models and revisions used for each combination of model size and model verbosity.
 
 | Model Size | Model Verbosity | Model used                                                                | Revision used                              |
 | ---------- | --------------- | ------------------------------------------------------------------------- | ------------------------------------------ |
@@ -126,7 +135,7 @@ xml_export:
 
 This project keeps a [changelog](./CHANGELOG.md).
 
-## Minimum supported Pyhton version
+## Minimum supported Python version
 
 This library tries to support as many Python versions as possible.
 When a Python version is added or dropped, this library's minor version is bumped.
