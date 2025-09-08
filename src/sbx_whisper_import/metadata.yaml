@@ -19,22 +19,17 @@ models:
 other_references:
   - "Swedish Whispers; Leveraging a Massive Speech Corpus for Swedish Speech Recognition - Vesterbacka et al - 2025 - Interspeech 2025, p758-762 - doi: 10.21437/Interspeech.2025-2646"
 short_description:
-  swe: Transkription av ljudfil till text med transformers och KB-Whisper för svenska.
+  swe: Transkription av ljudfil till text med transformers och KB-Whisper för svenska
   eng: Transcribing audio file to text by transformers and KB-Whisper for Swedish
 created: 2025-09-04
-annotations:
-  - text
-  - text:source_filename
-  - utterance
-  - utterance:start
-  - utterance:end
 example_output: |-
   ```xml
   <?xml version='1.0' encoding='utf-8'?>
-  <text>
-  <utterance end="6.0" start="0.0">Världsförklaring</utterance>
+  <text source_filename="example.mp3">
+    <utterance end="6.0" start="0.0">Världsförklaring</utterance>
   </text>
   ```
 plugin_url: https://github.com/spraakbanken/sparv-sbx-whisper-import
-type: analysis
+type: utility
 license: MIT license
+sparv_handler: sbx_whisper_import:parse_mp3
