@@ -17,7 +17,7 @@ This [Sparv](https://github.com/spraakbanken/sparv) plugin makes it possible to 
 - [Sparv](https://github.com/spraakbanken/sparv)
 - [`ffmpeg`](https://ffmpeg.org/) installed and available in your `PATH`
 
-### Install
+## Install
 
 Install in a virtual environment:
 
@@ -63,7 +63,7 @@ The following audio formats are supported:
 Do you miss some audio format?
 Please check the [tracking issue](https://github.com/spraakbanken/sparv-sbx-whisper-import/issues/16) or open a new issue to request support for additional formats.
 
-### Configuration
+## Configuration
 
 To use this plugin, specify the appropriate importer for your audio files in the Sparv configuration file (`config.yaml`).
 
@@ -90,7 +90,7 @@ export:
     - <token>
 ```
 
-### Annotations
+## Annotations
 
 The following annotations are created by the plugin:
 
