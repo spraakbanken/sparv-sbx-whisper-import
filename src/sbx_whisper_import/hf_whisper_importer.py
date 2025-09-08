@@ -2,10 +2,6 @@
 
 import typing as t
 
-import torch
-from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
-from transformers.pipelines import AutomaticSpeechRecognitionPipeline
-
 
 class TranscribeChunk(t.TypedDict):
     """Chunked text with timestamp (start, end)."""
@@ -65,6 +61,10 @@ class HFWhisperImporter:
             model_size: size of the model to use.
             model_verbosity: verbosity of the model.
         """
+        import torch  # noqa: PLC0415
+        from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline  # noqa: PLC0415
+        from transformers.pipelines import AutomaticSpeechRecognitionPipeline  # noqa: PLC0415
+
         device = "cuda:0" if torch.cuda.is_available() else "cpu"
         torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
 
