@@ -10,7 +10,7 @@ sbx_whisper_import:
   model_size: tiny
   model_verbosity: standard
 
-xml_export:
+export:
   annotations:
     - text
-    - segment.token
+    - <token>
