@@ -1,15 +1,14 @@
 import pytest
 from syrupy.assertion import SnapshotAssertion
 
+from sbx_whisper_import import cli
 from sbx_whisper_import.hf_whisper_importer import HFWhisperImporter
 
 
-def test_aspenstrom(snapshot: SnapshotAssertion) -> None:
-    importer = HFWhisperImporter(model_size="tiny")
+def test_aspenstrom(snapshot_json: SnapshotAssertion) -> None:
+    res = cli._run_transcription(["--model-size", "tiny", "assets/aspenstrom_varldsforklaring_aspenstrom.mp3"])
 
-    res = importer.transcribe("assets/aspenstrom_varldsforklaring_aspenstrom.mp3")
-
-    assert snapshot == res["text"]
+    assert res == snapshot_json
 
 
 def test_invalid_model_size_raises_value_error(snapshot: SnapshotAssertion) -> None:

@@ -1,6 +1,6 @@
 # serializer version: 1
 # name: test_transcribe_and_prepare_spans
-  ' Världsförklaring. När jag kommer ut på trappan har jag solen i brösthöjd. Nog är det en morgon i juli, men en morgon i juli är det inte. Vintergatan har i natt passerat genom trädgården, försilvrat mina dillkronor och kvarlämnat en stjärna i varje DAC-kåpa. Hallis Khomeet har fastnat i en enbuske. Jag stöder mig på vetenskapenkapen när jag påstår Det är oförklarligt och oförklarligt i dess toftlösa, interstellära Sjunger en fågel som jag inte ser och vars namn jag inte känner Inte finns det himmelsdag, himmelsväggar. Men himmelsdag, himmelsväggar finns det nog som återskallar, återskänker. Jag har sett detta ljus förr.'
+  ' Världsförklaring. När jag kommer ut på trappan har jag solen i brösthöjd. Nog är det en morgon i juli, men en morgon i juli är det inte. Vintergatan har i natt passiv. genom trädgården, försilvrat mina dillkronor och kvarlämnat en stjärna i varje dackkåpa. Halleskomet har fastnat i en enbuske. Jag stöder mig på vetenskapen när jag påstår. Det är oförklarligt och oförklarligt i dess toftlösa, interstellära. Sjunger en fågel som jag inte ser. och vars namn jag inte känner. Inte finns det himmelsdag, himmelsväggar. Men himmelsdag, himmelsväggar finns det nog som återskallar, återskänker. Jag har sett detta ljus förr.'
 # ---
 # name: test_transcribe_and_prepare_spans.1
   list([
@@ -18,47 +18,47 @@
     ),
     tuple(
       137,
-      187,
+      168,
     ),
     tuple(
-      187,
-      258,
+      168,
+      257,
     ),
     tuple(
-      258,
-      299,
+      257,
+      295,
     ),
     tuple(
-      299,
-      349,
+      295,
+      341,
     ),
     tuple(
-      349,
-      386,
+      341,
+      410,
     ),
     tuple(
-      386,
-      417,
+      410,
+      445,
     ),
     tuple(
-      417,
-      451,
+      445,
+      476,
     ),
     tuple(
-      451,
-      481,
+      476,
+      518,
     ),
     tuple(
-      481,
-      523,
+      518,
+      562,
     ),
     tuple(
-      523,
-      597,
+      562,
+      592,
     ),
     tuple(
-      597,
-      627,
+      592,
+      622,
     ),
   ])
 # ---
@@ -67,34 +67,34 @@
     0.0,
     11.0,
     18.0,
-    27.16,
-    32.02,
-    38.68,
-    44.06,
-    47.88,
-    52.32,
-    56.44,
-    60.52,
-    64.76,
-    68.7,
-    78.16,
+    26.0,
+    30.0,
+    38.0,
+    43.0,
+    48.0,
+    56.0,
+    60.0,
+    64.56,
+    68.96,
+    73.36,
+    78.24,
   ])
 # ---
 # name: test_transcribe_and_prepare_spans.3
   list([
     6.0,
     18.0,
-    25.62,
-    31.76,
-    37.92,
-    41.24,
-    47.72,
-    52.16,
-    56.28,
-    60.36,
-    64.6,
-    68.18,
-    77.14,
-    81.5,
+    26.0,
+    30.0,
+    38.0,
+    42.0,
+    48.0,
+    56.0,
+    60.0,
+    64.4,
+    68.8,
+    73.2,
+    78.08,
+    82.24,
   ])
 # ---

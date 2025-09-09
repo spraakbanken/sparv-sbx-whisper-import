@@ -11,11 +11,14 @@ requires-python = ">=3.11"
 dependencies = [
  "sparv>=5.3.1",
  "torch>=2.8.0",
- "transformers>=4.55.2",
+ "transformers>=4.56.1",
 ]
 
 [project.entry-points."sparv.plugin"]
 sbx_whisper_import = "sbx_whisper_import"
+
+[project.scripts]
+sbx-whisper-import = "sbx_whisper_import.cli:main"
 
 [build-system]
 requires = ["uv_build>=0.8.11,<0.9.0"]
