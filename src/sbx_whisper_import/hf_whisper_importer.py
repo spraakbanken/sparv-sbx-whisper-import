@@ -1,6 +1,11 @@
 """Whisper importer using transformers."""
 
+import logging
 import typing as t
+
+import sparv.api as sparv_api
+
+logger = sparv_api.get_logger(__name__)
 
 
 class TranscribeChunk(t.TypedDict):
@@ -67,7 +72,11 @@ class HFWhisperImporter:
         from transformers.pipelines import AutomaticSpeechRecognitionPipeline  # noqa: PLC0415
 
         device = "cuda:0" if torch.cuda.is_available() else "cpu"
-        torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
+        if device == "cpu":
+            logger.warning("Device is set to use cpu")
+        else:
+            logger.info("Device is set to use gpu")
+        dtype = torch.float16 if torch.cuda.is_available() else torch.float32
 
         model_verbosity_map = _SIZE_TO_MODEL_NAME.get(model_size.lower())
         if not model_verbosity_map:
@@ -75,10 +84,13 @@ class HFWhisperImporter:
         model_info = model_verbosity_map.get(model_verbosity.lower() if model_verbosity != "default" else "standard")
         if not model_info:
             raise ValueError(f"Unsupported model_verbosity='{model_verbosity}' for model_size='{model_size}'.")
+
+        _configure_third_party_loggers(show_progress=verbose)
+
         model = AutoModelForSpeechSeq2Seq.from_pretrained(
             model_info["name"],
             revision=model_info["revision"],
-            torch_dtype=torch_dtype,
+            dtype=dtype,
             low_cpu_mem_usage=True,
             use_safetensors=True,
         )
@@ -90,7 +102,7 @@ class HFWhisperImporter:
             model=model,
             tokenizer=processor.tokenizer,
             feature_extractor=processor.feature_extractor,
-            torch_dtype=torch_dtype,
+            dtype=dtype,
             device=device,
             ignore_warning=not verbose,
         )
@@ -118,6 +130,16 @@ class HFWhisperImporter:
             generate_kwargs=self._generate_kwargs,
             return_timestamps=True,
         )  # type: ignore[return-value]
+
+
+def _configure_third_party_loggers(*, show_progress: bool = False) -> None:
+    from huggingface_hub.utils.tqdm import disable_progress_bars  # noqa: PLC0415
+
+    if not show_progress:
+        disable_progress_bars()
+    for logger_name in ["transformers", "huggingface_hub"]:
+        third_party_logger = logging.getLogger(logger_name)
+        third_party_logger.setLevel(logging.ERROR)
 
 
 if __name__ == "__main__":

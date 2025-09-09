@@ -18,7 +18,7 @@ def _run_transcription(argv: t.Sequence[str] | None = None) -> TranscribeResult:
 
     args = parser.parse_args(argv)
 
-    importer = HFWhisperImporter(model_size=args.model_size, model_verbosity=args.verbosity)
+    importer = HFWhisperImporter(model_size=args.model_size, model_verbosity=args.verbosity, verbose=not args.quiet)
 
     return importer.transcribe(args.input)
 
@@ -30,6 +30,7 @@ def _build_cli() -> argparse.ArgumentParser:
     parser.add_argument(
         "input", type=str, help="audio input to trancribe in one of the formats MP3, OGG or WAV", metavar="INPUT"
     )
+    parser.add_argument("-q", "--quiet", action="store_true", help="Silence output", default=False)
     return parser
 
 
