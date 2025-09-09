@@ -215,3 +215,36 @@ test-aspenstrom-wav:
 	    examples/aspenstrom-wav/expected_export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.gold.xml
 
 test-examples: test-aspenstrom-mp3 test-aspenstrom-wav
+
+update-example-snapshots: update-aspenstrom-mp3-snapshot update-aspenstrom-ogg-snapshot update-aspenstrom-wav-snapshot
+
+update-aspenstrom-mp3-snapshot:\
+	examples/aspenstrom-mp3/expected_export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.gold.xml\
+	examples/aspenstrom-mp3/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml
+
+examples/aspenstrom-mp3/expected_export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.gold.xml: examples/aspenstrom-mp3/export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.xml
+		@cp $< $@
+
+examples/aspenstrom-mp3/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml: examples/aspenstrom-mp3/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml
+	@cp $< $@
+
+
+update-aspenstrom-ogg-snapshot:\
+	examples/aspenstrom-ogg/expected_export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.gold.xml\
+	examples/aspenstrom-ogg/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml
+
+examples/aspenstrom-ogg/expected_export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.gold.xml: examples/aspenstrom-ogg/export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.xml
+		@cp $< $@
+
+examples/aspenstrom-ogg/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml: examples/aspenstrom-ogg/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml
+	@cp $< $@
+
+update-aspenstrom-wav-snapshot:\
+	examples/aspenstrom-wav/expected_export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.gold.xml\
+	examples/aspenstrom-wav/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml
+
+examples/aspenstrom-wav/expected_export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.gold.xml: examples/aspenstrom-wav/export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.xml
+		@cp $< $@
+
+examples/aspenstrom-wav/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml: examples/aspenstrom-wav/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml
+	@cp $< $@

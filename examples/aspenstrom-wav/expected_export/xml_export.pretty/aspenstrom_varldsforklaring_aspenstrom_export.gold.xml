@@ -18,7 +18,7 @@
     <token>brösthöjd</token>
     <token>.</token>
   </utterance>
-  <utterance end="25.62" start="18.0">
+  <utterance end="26.0" start="18.0">
     <token>Nog</token>
     <token>är</token>
     <token>det</token>
@@ -37,17 +37,18 @@
     <token>inte</token>
     <token>.</token>
   </utterance>
-  <utterance end="31.76" start="27.16">
+  <utterance end="30.0" start="26.0">
     <token>Vintergatan</token>
     <token>har</token>
     <token>i</token>
     <token>natt</token>
-    <token>passerat</token>
+    <token>passiv</token>
+    <token>.</token>
+  </utterance>
+  <utterance end="38.0" start="30.0">
     <token>genom</token>
     <token>trädgården</token>
     <token>,</token>
-  </utterance>
-  <utterance end="37.92" start="32.02">
     <token>försilvrat</token>
     <token>mina</token>
     <token>dillkronor</token>
@@ -57,12 +58,11 @@
     <token>stjärna</token>
     <token>i</token>
     <token>varje</token>
-    <token>DAC-kåpa</token>
+    <token>dackkåpa</token>
     <token>.</token>
   </utterance>
-  <utterance end="41.24" start="38.68">
-    <token>Hallis</token>
-    <token>Khomeet</token>
+  <utterance end="42.0" start="38.0">
+    <token>Halleskomet</token>
     <token>har</token>
     <token>fastnat</token>
     <token>i</token>
@@ -70,31 +70,31 @@
     <token>enbuske</token>
     <token>.</token>
   </utterance>
-  <utterance end="47.72" start="44.06">
+  <utterance end="48.0" start="43.0">
     <token>Jag</token>
     <token>stöder</token>
     <token>mig</token>
     <token>på</token>
-    <token>vetenskapenkapen</token>
+    <token>vetenskapen</token>
     <token>när</token>
     <token>jag</token>
     <token>påstår</token>
+    <token>.</token>
   </utterance>
-  <utterance end="52.16" start="47.88">
+  <utterance end="56.0" start="48.0">
     <token>Det</token>
     <token>är</token>
     <token>oförklarligt</token>
     <token>och</token>
     <token>oförklarligt</token>
-  </utterance>
-  <utterance end="56.28" start="52.32">
     <token>i</token>
     <token>dess</token>
     <token>toftlösa</token>
     <token>,</token>
     <token>interstellära</token>
+    <token>.</token>
   </utterance>
-  <utterance end="60.36" start="56.44">
+  <utterance end="60.0" start="56.0">
     <token>Sjunger</token>
     <token>en</token>
     <token>fågel</token>
@@ -102,16 +102,18 @@
     <token>jag</token>
     <token>inte</token>
     <token>ser</token>
+    <token>.</token>
   </utterance>
-  <utterance end="64.6" start="60.52">
+  <utterance end="64.4" start="60.0">
     <token>och</token>
     <token>vars</token>
     <token>namn</token>
     <token>jag</token>
     <token>inte</token>
     <token>känner</token>
+    <token>.</token>
   </utterance>
-  <utterance end="68.18" start="64.76">
+  <utterance end="68.8" start="64.56">
     <token>Inte</token>
     <token>finns</token>
     <token>det</token>
@@ -120,7 +122,7 @@
     <token>himmelsväggar</token>
     <token>.</token>
   </utterance>
-  <utterance end="77.14" start="68.7">
+  <utterance end="73.2" start="68.96">
     <token>Men</token>
     <token>himmelsdag</token>
     <token>,</token>
@@ -128,13 +130,15 @@
     <token>finns</token>
     <token>det</token>
     <token>nog</token>
+  </utterance>
+  <utterance end="78.0" start="73.36">
     <token>som</token>
     <token>återskallar</token>
     <token>,</token>
     <token>återskänker</token>
     <token>.</token>
   </utterance>
-  <utterance end="81.5" start="78.16">
+  <utterance end="82.0" start="78.16">
     <token>Jag</token>
     <token>har</token>
     <token>sett</token>

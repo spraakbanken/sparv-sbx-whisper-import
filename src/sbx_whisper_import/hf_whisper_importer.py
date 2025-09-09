@@ -54,12 +54,13 @@ _SIZE_TO_MODEL_NAME: dict[str, dict[str, _ModelInfo]] = {
 class HFWhisperImporter:
     """Huggingface whisper importer."""
 
-    def __init__(self, *, model_size: str, model_verbosity: str = "default") -> None:
+    def __init__(self, *, model_size: str, model_verbosity: str = "default", verbose: bool = False) -> None:
         """Huggingface importer using whisper.
 
         Args:
             model_size: size of the model to use.
             model_verbosity: verbosity of the model.
+            verbose: if True more info is written.
         """
         import torch  # noqa: PLC0415
         from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline  # noqa: PLC0415
@@ -78,6 +79,7 @@ class HFWhisperImporter:
             model_info["name"],
             revision=model_info["revision"],
             torch_dtype=torch_dtype,
+            low_cpu_mem_usage=True,
             use_safetensors=True,
         )
         model.to(device)
@@ -90,6 +92,7 @@ class HFWhisperImporter:
             feature_extractor=processor.feature_extractor,
             torch_dtype=torch_dtype,
             device=device,
+            ignore_warning=not verbose,
         )
 
         generate_kwargs = {
@@ -109,7 +112,12 @@ class HFWhisperImporter:
         Returns:
             The transcribed text along with chunks.
         """
-        return self._pipe(audio_path, chunk_length_s=30, generate_kwargs=self._generate_kwargs, return_timestamps=True)  # type: ignore[return-value]
+        return self._pipe(
+            audio_path,
+            # chunk_length_s=30, FIXME: this is instable
+            generate_kwargs=self._generate_kwargs,
+            return_timestamps=True,
+        )  # type: ignore[return-value]
 
 
 if __name__ == "__main__":

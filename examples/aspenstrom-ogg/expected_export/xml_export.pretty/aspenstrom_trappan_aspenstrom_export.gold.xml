@@ -8,7 +8,7 @@
     <token>Trappan</token>
     <token>.</token>
   </utterance>
-  <utterance end="15.0" start="7.0">
+  <utterance end="19.0" start="9.0">
     <token>En</token>
     <token>trappa</token>
     <token>.</token>
@@ -17,8 +17,6 @@
     <token>som</token>
     <token>klättrar</token>
     <token>.</token>
-  </utterance>
-  <utterance end="20.0" start="15.0">
     <token>Steg</token>
     <token>för</token>
     <token>steg</token>
@@ -26,17 +24,15 @@
     <token>det</token>
     <token>sista</token>
     <token>.</token>
+  </utterance>
+  <utterance end="28.0" start="19.0">
     <token>Vidare</token>
     <token>.</token>
-  </utterance>
-  <utterance end="24.0" start="20.0">
     <token>Faller</token>
     <token>.</token>
     <token>Faller</token>
     <token>inte</token>
     <token>.</token>
-  </utterance>
-  <utterance end="33.0" start="24.0">
     <token>Svävar</token>
     <token>en</token>
     <token>stund</token>
@@ -44,49 +40,55 @@
     <token>sin</token>
     <token>innerliga</token>
     <token>tro</token>
-    <token>,</token>
-    <token>faller</token>
-    <token>,</token>
+    <token>.</token>
+  </utterance>
+  <utterance end="33.0" start="30.0">
     <token>tung</token>
     <token>som</token>
     <token>en</token>
     <token>säck</token>
     <token>.</token>
   </utterance>
-  <utterance end="46.08" start="33.0">
+  <utterance end="38.0" start="33.0">
     <token>Reser</token>
     <token>sig</token>
     <token>,</token>
     <token>klättrar</token>
     <token>uppför</token>
     <token>trappan</token>
-    <token>,</token>
     <token>högre</token>
-    <token>,</token>
-    <token>faller</token>
+    <token>.</token>
+  </utterance>
+  <utterance end="41.0" start="38.0">
+    <token>Faller</token>
     <token>,</token>
     <token>faller</token>
     <token>inte</token>
-    <token>,</token>
-    <token>svävar</token>
+    <token>.</token>
+  </utterance>
+  <utterance end="46.0" start="41.0">
+    <token>Svävar</token>
     <token>en</token>
     <token>stund</token>
     <token>i</token>
     <token>sin</token>
     <token>innerliga</token>
     <token>tro</token>
+    <token>.</token>
   </utterance>
-  <utterance end="51.96" start="46.24">
-    <token>faller</token>
+  <utterance end="52.0" start="46.0">
+    <token>Faller</token>
+    <token>,</token>
     <token>dunsigt</token>
-    <token>och</token>
+    <token>,</token>
     <token>oskönt</token>
     <token>som</token>
     <token>en</token>
     <token>vetesäck</token>
+    <token>.</token>
   </utterance>
-  <utterance end="56.68" start="52.12">
-    <token>reser</token>
+  <utterance end="56.0" start="52.0">
+    <token>Reser</token>
     <token>sig</token>
     <token>,</token>
     <token>trampar</token>
@@ -96,23 +98,27 @@
     <token>den</token>
     <token>blå</token>
     <token>luften</token>
+    <token>.</token>
   </utterance>
-  <utterance end="60.64" start="56.84">
-    <token>faller</token>
+  <utterance end="60.0" start="56.0">
+    <token>Faller</token>
     <token>,</token>
     <token>faller</token>
     <token>inte</token>
+    <token>.</token>
   </utterance>
-  <utterance end="76.2" start="60.8">
-    <token>svävar</token>
+  <utterance end="67.0" start="60.0">
+    <token>Svävar</token>
     <token>en</token>
     <token>stund</token>
     <token>i</token>
     <token>sin</token>
     <token>innerliga</token>
     <token>tro</token>
-    <token>faller</token>
     <token>,</token>
+    <token>faller</token>
+  </utterance>
+  <utterance end="74.2" start="67.16">
     <token>ser</token>
     <token>sig</token>
     <token>förvånat</token>
@@ -124,6 +130,5 @@
     <token>vandrar</token>
     <token>uppför</token>
     <token>trappan</token>
-    <token>.</token>
   </utterance>
 </text>
