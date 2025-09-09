@@ -63,6 +63,28 @@ The following audio formats are supported:
 Do you miss some audio format?
 Please check the [tracking issue](https://github.com/spraakbanken/sparv-sbx-whisper-import/issues/16) or open a new issue to request support for additional formats.
 
+### Command-line interface
+
+You can use this plugin from the command-line as
+
+```shell
+# Activate virtual environment
+> sbx-whisper-import --help
+usage: sbx-whisper-import [-h] [--model-size MODEL_SIZE] [--verbosity VERBOSITY] INPUT
+
+Transcribe audio file with KB-Whisper. Output is in JSON.
+
+positional arguments:
+  INPUT                 audio input to trancribe in one of the formats MP3, OGG or WAV
+
+options:
+  -h, --help            show this help message and exit
+  --model-size MODEL_SIZE
+                        set the size of the model
+  --verbosity VERBOSITY
+                        set the verbosity of the model
+```
+
 ## Configuration
 
 To use this plugin, specify the appropriate importer for your audio files in the Sparv configuration file (`config.yaml`).

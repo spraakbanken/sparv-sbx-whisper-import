@@ -17,6 +17,9 @@ dependencies = [
 [project.entry-points."sparv.plugin"]
 sbx_whisper_import = "sbx_whisper_import"
 
+[project.scripts]
+sbx-whisper-import = "sbx_whisper_import.cli:main"
+
 [build-system]
 requires = ["uv_build>=0.8.11,<0.9.0"]
 build-backend = "uv_build"
