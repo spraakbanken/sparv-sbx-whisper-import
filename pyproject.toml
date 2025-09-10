@@ -50,6 +50,7 @@ build-backend = "uv_build"
 
 [tool.uv.build-backend]
 module-name = "sbx_whisper_import"
+source-exclude = ["/.github", "/docs"]
 
 [dependency-groups]
 dev = [
