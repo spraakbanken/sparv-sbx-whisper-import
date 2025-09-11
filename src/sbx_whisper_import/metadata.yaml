@@ -1,6 +1,6 @@
 id: kb_whisper-parent
 abstract: true
-languages_codes:
+language_codes:
   - swe
 keywords:
   - whisper
@@ -33,33 +33,12 @@ example_output: |-
 plugin_url: https://github.com/spraakbanken/sparv-sbx-whisper-import
 type: utility
 license: MIT license
-sparv_handler: sbx_whisper_import:parse_mp3
 ---
 id: sbx-swe-speech2text-transformers-kb_whisper_mp3
 parent: kb_whisper-parent
-languages_codes:
-  - swe
-keywords:
-  - whisper
-  - transformers
-  - huggingface
-tools:
-  - name: "transformers"
-    url: "https://github.com/huggingface/transformers"
-    license: "Apache-2.0 license"
-models:
-  - name: "KBLab/kb-whisper-tiny"
-    url: "https:/huggingface.co/KBLab/kb-whisper-tiny"
-    description: |-
-      The National Library of Sweden releases a new suite of Whisper models trained
-      on over 50,000 hours of Swedish speech.
-    license: "Apache-2.0 license"
-other_references:
-  - "Swedish Whispers; Leveraging a Massive Speech Corpus for Swedish Speech Recognition - Vesterbacka et al - 2025 - Interspeech 2025, p758-762 - doi: 10.21437/Interspeech.2025-2646"
 short_description:
   swe: Transkription av ljudfil (mp3) till text med transformers och KB-Whisper för svenska
   eng: Transcribing audio file (mp3) to text by transformers and KB-Whisper for Swedish
-created: 2025-09-04
 example_output: |-
   ```xml
   <?xml version='1.0' encoding='utf-8'?>
@@ -67,10 +46,7 @@ example_output: |-
     <utterance end="6.0" start="0.0">Världsförklaring</utterance>
   </text>
   ```
-plugin_url: https://github.com/spraakbanken/sparv-sbx-whisper-import
-type: utility
-license: MIT license
-sparv_handler: sbx_whisper_import:parse_mp3
+sparv_processor: sbx_whisper_import:parse_mp3
 ---
 id: sbx-swe-speech2text-transformers-kb_whisper_ogg
 parent: kb_whisper-parent
@@ -84,7 +60,7 @@ example_output: |-
     <utterance end="6.0" start="0.0">Världsförklaring</utterance>
   </text>
   ```
-sparv_handler: sbx_whisper_import:parse_ogg
+sparv_processor: sbx_whisper_import:parse_ogg
 ---
 id: sbx-swe-speech2text-transformers-kb_whisper_wav
 parent: kb_whisper-parent
@@ -98,4 +74,4 @@ example_output: |-
     <utterance end="6.0" start="0.0">Världsförklaring</utterance>
   </text>
   ```
-sparv_handler: sbx_whisper_import:parse_wav
+sparv_processor: sbx_whisper_import:parse_wav

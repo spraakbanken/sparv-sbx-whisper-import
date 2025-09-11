@@ -166,15 +166,12 @@ snapshot-update:
 	${INVENV} pytest --snapshot-update
 
 ### === project targets below this line ===
-.PHONY: generate-metadata
-generate-metadata: \
-	examples/metadata/export/sbx_metadata/utility/sbx-swe-speech2text-transformers-kb_whisper_mp3.yaml \
-	examples/metadata/export/sbx_metadata/utility/sbx-swe-speech2text-transformers-kb_whisper_ogg.yaml \
-	examples/metadata/export/sbx_metadata/utility/sbx-swe-speech2text-transformers-kb_whisper_wav.yaml
+install-dev-metadata:
+	uv sync --all-packages --group metadata --dev
 
-examples/metadata/export/sbx_metadata/utility/sbx-swe-speech2text-transformers-kb_whisper_mp3.yaml \
-	examples/metadata/export/sbx_metadata/utility/sbx-swe-speech2text-transformers-kb_whisper_ogg.yaml \
-	examples/metadata/export/sbx_metadata/utility/sbx-swe-speech2text-transformers-kb_whisper_wav.yaml:
+.PHONY: generate-metadata
+generate-metadata: install-dev-metadata src/sbx_whisper_import/metadata.yaml
+	rm -rf examples/metadata/export/sbx_metadata
 	cd examples/metadata; ${INVENV} sparv run sbx_metadata:plugin_analysis_metadata_export
 
 assets:
