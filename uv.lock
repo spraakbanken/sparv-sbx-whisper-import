@@ -1521,8 +1521,8 @@ wheels = [
 
 [[package]]
 name = "sparv-sbx-metadata"
-version = "2.3.0"
-source = { git = "https://github.com/spraakbanken/sparv-sbx-metadata?tag=v2.3.0#9aade7ba13945d4c913ef532e3faec39e1097b5e" }
+version = "2.3.1"
+source = { git = "https://github.com/spraakbanken/sparv-sbx-metadata?tag=v2.3.1#f8a83f74e72db2e7713fd7d2060c33ba74a1e001" }
 dependencies = [
     { name = "langcodes" },
     { name = "pyyaml" },
@@ -1566,7 +1566,7 @@ dev = [
     { name = "ruff", specifier = ">=0.12.9" },
     { name = "syrupy", specifier = ">=4.9.1" },
 ]
-metadata = [{ name = "sparv-sbx-metadata", git = "https://github.com/spraakbanken/sparv-sbx-metadata?tag=v2.3.0" }]
+metadata = [{ name = "sparv-sbx-metadata", git = "https://github.com/spraakbanken/sparv-sbx-metadata?tag=v2.3.1" }]
 
 [[package]]
 name = "stanza"

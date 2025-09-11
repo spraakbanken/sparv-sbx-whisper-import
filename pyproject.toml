@@ -53,7 +53,7 @@ module-name = "sbx_whisper_import"
 source-exclude = ["/.github", "/docs"]
 
 [tool.uv.sources]
-sparv-sbx-metadata = { git = "https://github.com/spraakbanken/sparv-sbx-metadata", tag = "v2.3.0" }
+sparv-sbx-metadata = { git = "https://github.com/spraakbanken/sparv-sbx-metadata", tag = "v2.3.1" }
 
 [dependency-groups]
 dev = [
