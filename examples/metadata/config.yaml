@@ -1,0 +1,16 @@
+metadata:
+  id: metadata-generation
+  language: swe
+
+import:
+  text_annotation: text
+  importer: sbx_whisper_import:parse_mp3
+
+sbx_whisper_import:
+  model_size: tiny
+  model_verbosity: standard
+
+export:
+  annotations:
+    - text
+    - <token>
