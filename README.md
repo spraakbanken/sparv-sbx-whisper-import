@@ -203,7 +203,7 @@ This repo uses [conventional commits](https://www.conventionalcommits.org/en/v1.
   - GitHub Actions will build, test and publish the package to [PyPi](https://pypi.prg).
 - Add metadata for [Språkbanken's resource](https://spraakbanken.gu.se/resurser)
   - Generate metadata: `make generate-metadata`
-  - Upload the files from `examples/metadata/export/sbx_metadata/utility` to <https://github.com/spraakbanken/metadata/tree/main/yaml/analysis>.
+  - Upload the files from `examples/metadata/export/sbx_metadata/utility` to <https://github.com/spraakbanken/metadata/tree/main/yaml/utility>.
 
 ## License
 
