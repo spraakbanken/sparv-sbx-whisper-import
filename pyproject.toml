@@ -5,7 +5,6 @@ description = "Allow Sparv to import audio as text with KB Whisper"
 readme = "README.md"
 authors = [
     { name = "Språkbanken Text", email = "sb-info@svenska.gu.se" },
-    { name = "Kristoffer Andersson", email = "kristoffer.andersson@gu.se" },
 ]
 requires-python = ">=3.11"
 dependencies = [

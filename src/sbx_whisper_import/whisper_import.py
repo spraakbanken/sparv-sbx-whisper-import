@@ -11,7 +11,7 @@ logger = sparv_api.get_logger(__name__)
 @sparv_api.importer(
     "Import audio from MP3 with Whisper",
     file_extension="mp3",
-    outputs=["text"],
+    outputs=["text", "utterance"],
     text_annotation="text",
 )
 def parse_mp3(
@@ -33,7 +33,7 @@ def parse_mp3(
 @sparv_api.importer(
     "Import audio from OGG with Whisper",
     file_extension="ogg",
-    outputs=["text"],
+    outputs=["text", "utterance"],
     text_annotation="text",
 )
 def parse_ogg(
@@ -55,7 +55,7 @@ def parse_ogg(
 @sparv_api.importer(
     "Import audio from WAV with Whisper",
     file_extension="wav",
-    outputs=["text"],
+    outputs=["text", "utterance"],
     text_annotation="text",
 )
 def parse_wav(
@@ -87,13 +87,23 @@ def transcribe_audio(
     )
 
     # Make up a text annotation surrounding the whole file
-    text_annotation = ["text", "text:source_filename", "utterance", "utterance:start", "utterance:end"]
+    text_annotation = [
+        "text",
+        "text:source_filename",
+        "text:model_size",
+        "text:model_verbosity",
+        "utterance",
+        "utterance:start",
+        "utterance:end",
+    ]
     source_file_name = f"{source_file}{extension}"
 
     # Write output
     Text(source_file).write(text)
     Output("text", source_file=source_file).write([(0, len(text))])
     Output("text:source_filename", source_file=source_file).write([source_file_name])
+    Output("text:model_size", source_file=source_file).write([model_size])
+    Output("text:model_verbosity", source_file=source_file).write([model_verbosity])
     Output("utterance", source_file=source_file).write(utterance_spans)
     Output("utterance:start", source_file=source_file).write(utterance_starts)
     Output("utterance:end", source_file=source_file).write(utterance_ends)

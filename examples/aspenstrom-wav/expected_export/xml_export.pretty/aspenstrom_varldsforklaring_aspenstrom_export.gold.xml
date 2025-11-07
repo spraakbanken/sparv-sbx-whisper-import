@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<text source_filename="aspenstrom_varldsforklaring_aspenstrom.wav">
+<text model_size="tiny" model_verbosity="standard" source_filename="aspenstrom_varldsforklaring_aspenstrom.wav">
   <utterance end="6.0" start="0.0">
     <token>Världsförklaring</token>
     <token>.</token>
