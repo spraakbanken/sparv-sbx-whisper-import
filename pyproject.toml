@@ -41,7 +41,8 @@ sbx-whisper-import = "sbx_whisper_import.cli:main"
 [project.urls]
 Homepage = "https://spraakbanken.gu.se"
 Repository = "https://github.com/spraakbanken/sparv-sbx-whisper-import"
-"Bug Tracker" = "https://github.com/spraakbanken/sparv-sbx-whisper-import/issues"
+Issues = "https://github.com/spraakbanken/sparv-sbx-whisper-import/issues"
+Changelog = "https://github.com/spraakbanken/sparv-sbx-whisper-import/blob/main/CHANGELOG.md"
 
 [build-system]
 requires = ["uv_build>=0.8.11,<0.9.0"]
