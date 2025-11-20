@@ -10,11 +10,21 @@ allow_dirty = false
 commit = true
 message = "chore(release): Bump version: {current_version} → {new_version}"
 commit_args = "--no-verify"
+pre_commit_hooks = [
+    "uv lock",
+    "git add --update"
+]
 
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"
 search = 'version = "{current_version}"'
 replace = 'version = "{new_version}"'
+
+[[tool.bumpversion.files]]
+filename = "src/sbx_whisper_import/metadata.yaml"
+search = "updated: \\d{{4}}-\\d{{2}}-\\d{{2}}"
+replace = "updated: {now:%Y-%m-%d}"
+regex = true
 
 [[tool.bumpversion.files]]
 filename = "CHANGELOG.md"
