@@ -52,6 +52,14 @@ updated: 2025-11-20
 plugin_url: https://github.com/spraakbanken/sparv-sbx-whisper-import
 type: utility
 license: MIT license
+# annotations:
+#   - text
+#   - text:model_size
+#   - text:model_verbosity
+#   - text:source_filename
+#   - utterance
+#   - utterance:start
+#   - utterance:end
 ---
 id: sbx-swe-speech2text-transformers-kb_whisper_mp3
 parent: kb_whisper-parent
