@@ -1,13 +1,16 @@
 # sparv-sbx-whisper-import
 
-[![PyPI version](https://badge.fury.io/py/sparv-sbx-whisper-import.svg)](https://pypi.org/project/sparv-sbx-whisper-import)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/sparv-sbx-whisper-import)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/sparv-sbx-whisper-import)](https://pypi.org/project/sparv-sbx-whisper-import/)
+[![PyPI version](https://img.shields.io/pypi/v/sparv-sbx-whisper-import.svg)](https://pypi.org/project/sparv-sbx-whisper-import/)
+[![PyPI license](https://img.shields.io/pypi/l/sparv-sbx-whisper-import.svg)](https://pypi.org/project/sparv-sbx-whisper-import/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/sparv-sbx-whisper-import.svg)](https://pypi.org/project/sparv-sbx-whisper-import/)
 
 [![Maturity badge - level 2](https://img.shields.io/badge/Maturity-Level%202%20--%20First%20Release-yellowgreen.svg)](https://github.com/spraakbanken/getting-started/blob/main/scorecard.md)
-[![Stage](https://img.shields.io/pypi/status/sparv-sbx-whisper-import)](https://pypi.org/project/sparv-sbx-whisper-import/)
+[![Stage](https://img.shields.io/pypi/status/sparv-sbx-whisper-import.svg)](https://pypi.org/project/sparv-sbx-whisper-import/)
 
+[![CI(check)](https://github.com/spraakbanken/sparv-sbx-whisper-import/actions/workflows/check.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-whisper-import/actions/workflows/check.yml)
 [![CI(release)](https://github.com/spraakbanken/sparv-sbx-whisper-import/actions/workflows/release.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-whisper-import/actions/workflows/release.yml)
+[![CI(scheduled)](https://github.com/spraakbanken/sparv-sbx-whisper-import/actions/workflows/rolling.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-whisper-import/actions/workflows/rolling.yml)
+[![CI(test)](https://github.com/spraakbanken/sparv-sbx-whisper-import/actions/workflows/test.yml/badge.svg)](https://github.com/spraakbanken/sparv-sbx-whisper-import/actions/workflows/test.yml)
 
 This [Sparv](https://github.com/spraakbanken/sparv) plugin makes it possible to use audio files as input to Sparv. The audio is transcribed to text using [transformers](https://github.com/huggingface/transformers) and the [KB Whisper models](https://huggingface.co/KBLab/kb-whisper-small).
 
