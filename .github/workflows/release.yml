@@ -101,7 +101,7 @@ jobs:
       - uses: federicocarboni/setup-ffmpeg@37062fbf7149fc5578d6c57e08aed62458b375d6 # v3.1.0
 
       - name: get dist artifacts
-        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: pypi_files
           path: dist
@@ -153,7 +153,7 @@ jobs:
         with:
           python-version: ${{ env.MINIMUM_PYTHON_VERSION }}
       - name: get dist artifacts
-        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
         with:
           name: pypi_files
           path: dist
