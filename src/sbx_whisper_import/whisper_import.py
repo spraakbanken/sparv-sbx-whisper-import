@@ -19,7 +19,7 @@ def parse_mp3(
     source_dir: Source = Source(),
     model_size: str = Config("sbx_whisper_import.model_size"),
     model_verbosity: str = Config("sbx_whisper_import.model_verbosity"),
-    temperature: str = Config("sbx_whisper_import.temperature"),
+    temperature: float = Config("sbx_whisper_import.temperature"),
 ) -> None:
     """Transcribe mp3 file as input to Sparv."""
     transcribe_audio(
@@ -42,7 +42,7 @@ def parse_ogg(
     source_dir: Source = Source(),
     model_size: str = Config("sbx_whisper_import.model_size"),
     model_verbosity: str = Config("sbx_whisper_import.model_verbosity"),
-    temperature: str = Config("sbx_whisper_import.temperature"),
+    temperature: float = Config("sbx_whisper_import.temperature"),
 ) -> None:
     """Transcribe ogg file as input to Sparv."""
     transcribe_audio(
@@ -65,7 +65,7 @@ def parse_wav(
     source_dir: Source = Source(),
     model_size: str = Config("sbx_whisper_import.model_size"),
     model_verbosity: str = Config("sbx_whisper_import.model_verbosity"),
-    temperature: str = Config("sbx_whisper_import.temperature"),
+    temperature: float = Config("sbx_whisper_import.temperature"),
 ) -> None:
     """Transcribe wav file as input to Sparv."""
     transcribe_audio(
@@ -115,7 +115,7 @@ def transcribe_audio(
 
 
 def _transcribe_and_prepare_spans(
-    model_size: str, model_verbosity: str, temperature: str, source_filename: str
+    model_size: str, model_verbosity: str, temperature: float, source_filename: str
 ) -> tuple[str, list[tuple[int, int]], list[float], list[float]]:
     importer = HFWhisperImporter(model_size=model_size, model_verbosity=model_verbosity, temperature=temperature)
 
