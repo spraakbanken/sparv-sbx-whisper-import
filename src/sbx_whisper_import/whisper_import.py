@@ -28,6 +28,7 @@ def parse_mp3(
         model_size=model_size,
         model_verbosity=model_verbosity,
         extension=".mp3",
+        temperature=temperature,
     )
 
 
@@ -51,6 +52,7 @@ def parse_ogg(
         model_size=model_size,
         model_verbosity=model_verbosity,
         extension=".ogg",
+        temperature=temperature,
     )
 
 
@@ -74,6 +76,7 @@ def parse_wav(
         model_size=model_size,
         model_verbosity=model_verbosity,
         extension=".wav",
+        temperature=temperature,
     )
 
 
