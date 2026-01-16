@@ -19,6 +19,12 @@ __config__ = [
         description="The verbosity of the model. Defaults to 'standard'",
         datatype=str,
     ),
+    Config(
+        "sbx_whisper_import.temperature",
+        0,
+        description="The temperature controlling randomness. Defaults to 0",
+        datatype=str,
+    ),
 ]
 
 __description__ = "Import audio files as text with Whisper."

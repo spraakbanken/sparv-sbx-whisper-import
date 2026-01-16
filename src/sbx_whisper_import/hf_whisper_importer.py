@@ -59,13 +59,14 @@ _SIZE_TO_MODEL_NAME: dict[str, dict[str, _ModelInfo]] = {
 class HFWhisperImporter:
     """Huggingface whisper importer."""
 
-    def __init__(self, *, model_size: str, model_verbosity: str = "default", verbose: bool = False) -> None:
+    def __init__(self, *, model_size: str, model_verbosity: str = "default", verbose: bool = False, temperature: int = 0) -> None:
         """Huggingface importer using whisper.
 
         Args:
             model_size: size of the model to use.
             model_verbosity: verbosity of the model.
             verbose: if True more info is written.
+            temperature: temperature to control randomness
         """
         import torch  # noqa: PLC0415
         from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline  # noqa: PLC0415
@@ -110,6 +111,7 @@ class HFWhisperImporter:
         generate_kwargs = {
             "task": "transcribe",
             "language": "sv",
+            "temperature": temperature
         }
 
         self._pipe: AutomaticSpeechRecognitionPipeline = pipe
