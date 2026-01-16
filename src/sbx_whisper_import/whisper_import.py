@@ -85,7 +85,7 @@ def transcribe_audio(
     source_dir: Source,
     model_size: str,
     model_verbosity: str,
-    temperature: int,
+    temperature: float,
     extension: str,
 ) -> None:
     """Transcribe audio file as input to Sparv."""
