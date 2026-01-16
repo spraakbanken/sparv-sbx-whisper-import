@@ -59,7 +59,7 @@ _SIZE_TO_MODEL_NAME: dict[str, dict[str, _ModelInfo]] = {
 class HFWhisperImporter:
     """Huggingface whisper importer."""
 
-    def __init__(self, *, model_size: str, model_verbosity: str = "default", verbose: bool = False, temperature: int = 0) -> None:
+    def __init__(self, *, model_size: str, model_verbosity: str = "default", verbose: bool = False, temperature: float = 0) -> None:
         """Huggingface importer using whisper.
 
         Args:
