@@ -14,3 +14,4 @@ export:
   annotations:
     - text
     - <token>
+    - <sentence>

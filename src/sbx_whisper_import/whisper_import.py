@@ -128,6 +128,9 @@ def _transcribe_and_prepare_spans(
         utterance_starts.append(chunk["timestamp"][0])
         utterance_ends.append(chunk["timestamp"][1])
         curr_end += len(chunk["text"])
+        if chunk["text"].startswith(" "):
+            curr_start += 1
+        logger.debug("chunk='%s' start=%d end=%d", chunk["text"], curr_start, curr_end)
         utterance_spans.append((curr_start, curr_end))
         curr_start = curr_end
 
