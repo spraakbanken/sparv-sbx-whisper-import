@@ -1,13 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<text model_size="tiny" model_verbosity="standard" source_filename="aspenstrom_varldsforklaring_aspenstrom.wav">
+<text model_size="tiny" model_verbosity="standard" source_filename="aspenstrom_varldsforklaring_aspenstrom.wav" temperature="1">
   <sentence>
-    <utterance end="6.0" start="0.0">
+    <utterance end="5.0" start="0.0">
       <token>Världsförklaring</token>
-      <token>.</token>
     </utterance>
-  </sentence>
-  <sentence>
-    <utterance end="18.0" start="11.0">
+    <utterance end="18.0" start="5.0">
       <token>När</token>
       <token>jag</token>
       <token>kommer</token>
@@ -49,31 +46,28 @@
       <token>har</token>
       <token>i</token>
       <token>natt</token>
-      <token>passiv</token>
+      <token>passion</token>
       <token>.</token>
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="38.0" start="30.0">
-      <token>genom</token>
-      <token>trädgården</token>
-      <token>,</token>
-      <token>försilvrat</token>
+    <utterance end="38.1" start="30.0">
+      <token>förskildrat</token>
       <token>mina</token>
-      <token>dillkronor</token>
+      <token>dildkronor</token>
       <token>och</token>
       <token>kvarlämnat</token>
       <token>en</token>
       <token>stjärna</token>
       <token>i</token>
       <token>varje</token>
-      <token>dackkåpa</token>
+      <token>Dacoba</token>
       <token>.</token>
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="42.0" start="38.0">
-      <token>Halleskomet</token>
+    <utterance end="41.72" start="38.62">
+      <token>Hallesgomet</token>
       <token>har</token>
       <token>fastnat</token>
       <token>i</token>
@@ -83,7 +77,7 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="48.0" start="43.0">
+    <utterance end="48.08" start="43.96">
       <token>Jag</token>
       <token>stöder</token>
       <token>mig</token>
@@ -92,12 +86,9 @@
       <token>när</token>
       <token>jag</token>
       <token>påstår</token>
-      <token>.</token>
     </utterance>
-  </sentence>
-  <sentence>
-    <utterance end="56.0" start="48.0">
-      <token>Det</token>
+    <utterance end="54.36" start="48.08">
+      <token>det</token>
       <token>är</token>
       <token>oförklarligt</token>
       <token>och</token>
@@ -106,12 +97,14 @@
       <token>dess</token>
       <token>toftlösa</token>
       <token>,</token>
-      <token>interstellära</token>
+    </utterance>
+    <utterance end="56.44" start="54.36">
+      <token>interstillära</token>
       <token>.</token>
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="60.0" start="56.0">
+    <utterance end="59.76" start="56.44">
       <token>Sjunger</token>
       <token>en</token>
       <token>fågel</token>
@@ -123,7 +116,7 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="64.4" start="60.0">
+    <utterance end="64.16" start="60.0">
       <token>och</token>
       <token>vars</token>
       <token>namn</token>
@@ -134,27 +127,27 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="68.8" start="64.56">
+    <utterance end="68.56" start="64.32">
       <token>Inte</token>
       <token>finns</token>
       <token>det</token>
-      <token>himmelsdag</token>
+      <token>himmelstak</token>
       <token>,</token>
       <token>himmelsväggar</token>
       <token>.</token>
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="73.2" start="68.96">
+    <utterance end="71.96" start="68.72">
       <token>Men</token>
-      <token>himmelsdag</token>
+      <token>himmelsstak</token>
       <token>,</token>
       <token>himmelsväggar</token>
+    </utterance>
+    <utterance end="78.04" start="72.12">
       <token>finns</token>
       <token>det</token>
       <token>nog</token>
-    </utterance>
-    <utterance end="78.0" start="73.36">
       <token>som</token>
       <token>återskallar</token>
       <token>,</token>
@@ -163,7 +156,7 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="82.0" start="78.16">
+    <utterance end="82.04" start="78.2">
       <token>Jag</token>
       <token>har</token>
       <token>sett</token>

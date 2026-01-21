@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<text model_size="tiny" model_verbosity="standard" source_filename="aspenstrom_trappan_aspenstrom.ogg">
+<text model_size="tiny" model_verbosity="standard" source_filename="aspenstrom_trappan_aspenstrom.ogg" temperature="0">
   <sentence>
     <utterance end="7.0" start="0.0">
       <token>En</token>

@@ -1,53 +1,48 @@
 <?xml version='1.0' encoding='utf-8'?>
-<text model_size="tiny" model_verbosity="standard" source_filename="aspenstrom_trappan_aspenstrom.wav">
+<text model_size="tiny" model_verbosity="standard" source_filename="aspenstrom_trappan_aspenstrom.wav" temperature="1">
   <sentence>
-    <utterance end="7.0" start="0.0">
-      <token>En</token>
-      <token>dikt</token>
-      <token>som</token>
-      <token>heter</token>
-      <token>Trappan</token>
+    <utterance end="0.8" start="0.0">
+      <token>1</token>
       <token>.</token>
     </utterance>
   </sentence>
-  <utterance end="19.0" start="7.0">
-    <sentence>
+  <sentence>
+    <utterance end="7.16" start="3.32">
       <token>En</token>
+      <token>dyk</token>
+      <token>som</token>
+      <token>heter</token>
+      <token>Trappan</token>
+    </utterance>
+    <utterance end="13.04" start="9.72">
+      <token>en</token>
       <token>trappa</token>
-      <token>.</token>
-    </sentence>
-    <sentence>
+    </utterance>
+    <utterance end="15.56" start="13.04">
       <token>En</token>
       <token>man</token>
       <token>som</token>
       <token>klättrar</token>
-      <token>.</token>
-    </sentence>
-    <sentence>
+    </utterance>
+    <utterance end="16.88" start="15.56">
       <token>Steg</token>
       <token>för</token>
       <token>steg</token>
+    </utterance>
+    <utterance end="20.22" start="16.88">
       <token>till</token>
       <token>det</token>
       <token>sista</token>
-      <token>.</token>
-    </sentence>
-  </utterance>
-  <utterance end="28.0" start="19.0">
-    <sentence>
-      <token>Vidare</token>
-      <token>.</token>
-    </sentence>
-    <sentence>
+      <token>,</token>
+      <token>vidare</token>
+    </utterance>
+    <utterance end="23.98" start="20.48">
       <token>Faller</token>
-      <token>.</token>
-    </sentence>
-    <sentence>
-      <token>Faller</token>
+      <token>,</token>
+      <token>faller</token>
       <token>inte</token>
-      <token>.</token>
-    </sentence>
-    <sentence>
+    </utterance>
+    <utterance end="28.36" start="24.32">
       <token>Svävar</token>
       <token>en</token>
       <token>stund</token>
@@ -55,37 +50,49 @@
       <token>sin</token>
       <token>innerliga</token>
       <token>tro</token>
-      <token>.</token>
-    </sentence>
-  </utterance>
-  <utterance end="33.0" start="30.0">
-    <sentence>
-      <token>tung</token>
+    </utterance>
+    <utterance end="32.82" start="30.96">
+      <token>Tung</token>
       <token>som</token>
       <token>en</token>
       <token>säck</token>
       <token>.</token>
-    </sentence>
-  </utterance>
-  <utterance end="41.0" start="33.0">
-    <sentence>
+    </utterance>
+  </sentence>
+  <sentence>
+    <utterance end="35.06" start="34.1">
       <token>Reser</token>
       <token>sig</token>
-      <token>,</token>
-      <token>klättrar</token>
+      <token>.</token>
+    </utterance>
+  </sentence>
+  <sentence>
+    <utterance end="36.92" start="35.32">
+      <token>Klättrar</token>
       <token>uppför</token>
       <token>trappan</token>
-      <token>högre</token>
-      <token>,</token>
-      <token>faller</token>
-      <token>,</token>
-      <token>faller</token>
-      <token>inte</token>
       <token>.</token>
-    </sentence>
-  </utterance>
-  <utterance end="46.0" start="41.0">
-    <sentence>
+    </utterance>
+  </sentence>
+  <sentence>
+    <utterance end="37.46" start="36.92">
+      <token>Högre</token>
+      <token>.</token>
+    </utterance>
+  </sentence>
+  <sentence>
+    <utterance end="38.7" start="38.04">
+      <token>Faller</token>
+      <token>.</token>
+    </utterance>
+  </sentence>
+  <sentence>
+    <utterance end="40.8" start="39.5">
+      <token>Faller</token>
+      <token>inte</token>
+      <token>,</token>
+    </utterance>
+    <utterance end="44.8" start="41.48">
       <token>Svävar</token>
       <token>en</token>
       <token>stund</token>
@@ -94,48 +101,69 @@
       <token>innerliga</token>
       <token>tro</token>
       <token>.</token>
-    </sentence>
-  </utterance>
-  <utterance end="52.0" start="46.0">
-    <sentence>
+    </utterance>
+  </sentence>
+  <sentence>
+    <utterance end="47.16" start="46.42">
       <token>Faller</token>
-      <token>,</token>
-      <token>dunsigt</token>
-      <token>,</token>
-      <token>oskönt</token>
-      <token>,</token>
-      <token>som</token>
-      <token>en</token>
-      <token>vetesäck</token>
       <token>.</token>
-    </sentence>
-  </utterance>
-  <utterance end="56.0" start="52.0">
-    <sentence>
+    </utterance>
+  </sentence>
+  <sentence>
+    <utterance end="48.68" start="47.8">
+      <token>Dunsigt</token>
+      <token>.</token>
+    </utterance>
+  </sentence>
+  <sentence>
+    <utterance end="51.2" start="49.04">
+      <token>Oskön</token>
+      <token>som</token>
+      <token>är</token>
+      <token>en</token>
+      <token>vite</token>
+      <token>säck</token>
+      <token>.</token>
+    </utterance>
+  </sentence>
+  <sentence>
+    <utterance end="53.24" start="52.24">
       <token>Reser</token>
       <token>sig</token>
-      <token>,</token>
-      <token>trampar</token>
-      <token>,</token>
-      <token>trampar</token>
+      <token>.</token>
+    </utterance>
+  </sentence>
+  <sentence>
+    <utterance end="53.76" start="53.5">
+      <token>Trampar</token>
+      <token>.</token>
+    </utterance>
+  </sentence>
+  <sentence>
+    <utterance end="56.3" start="54.26">
+      <token>Trampar</token>
       <token>i</token>
       <token>den</token>
       <token>blå</token>
       <token>luften</token>
-      <token>.</token>
-    </sentence>
-  </utterance>
-  <utterance end="60.0" start="56.0">
-    <sentence>
+      <token>!</token>
+    </utterance>
+  </sentence>
+  <sentence>
+    <utterance end="58.12" start="56.82">
       <token>Faller</token>
-      <token>,</token>
-      <token>faller</token>
+      <token>.</token>
+    </utterance>
+  </sentence>
+  <sentence>
+    <utterance end="59.74" start="58.62">
+      <token>Faller</token>
       <token>inte</token>
       <token>.</token>
-    </sentence>
-  </utterance>
+    </utterance>
+  </sentence>
   <sentence>
-    <utterance end="67.0" start="60.0">
+    <utterance end="65.16" start="60.0">
       <token>Svävar</token>
       <token>en</token>
       <token>stund</token>
@@ -143,21 +171,35 @@
       <token>sin</token>
       <token>innerliga</token>
       <token>tro</token>
-      <token>,</token>
-      <token>faller</token>
+      <token>.</token>
     </utterance>
-    <utterance end="74.2" start="67.16">
-      <token>ser</token>
+  </sentence>
+  <sentence>
+    <utterance end="67.16" start="65.32">
+      <token>Faller</token>
+      <token>.</token>
+    </utterance>
+  </sentence>
+  <sentence>
+    <utterance end="69.2" start="67.32">
+      <token>Ser</token>
       <token>sig</token>
       <token>förvånat</token>
       <token>omkring</token>
-      <token>,</token>
-      <token>reser</token>
-      <token>sig</token>
-      <token>,</token>
-      <token>vandrar</token>
-      <token>uppför</token>
-      <token>trappan</token>
+      <token>.</token>
     </utterance>
   </sentence>
+  <utterance end="73.92" start="69.36">
+    <sentence>
+      <token>Reser</token>
+      <token>sig</token>
+      <token>.</token>
+    </sentence>
+    <sentence>
+      <token>Vandrar</token>
+      <token>uppför</token>
+      <token>trappan</token>
+      <token>.</token>
+    </sentence>
+  </utterance>
 </text>
