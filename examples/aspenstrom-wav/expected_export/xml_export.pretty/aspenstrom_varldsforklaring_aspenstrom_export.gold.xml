@@ -1,21 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
-<text model_size="tiny" model_verbosity="standard" source_filename="aspenstrom_varldsforklaring_aspenstrom.wav">
+<text model_size="tiny" model_verbosity="standard" source_filename="aspenstrom_varldsforklaring_aspenstrom.wav" temperature="1">
   <sentence>
     <utterance end="5.0" start="0.0">
       <token>Världsförklaring</token>
-      <token>.</token>
     </utterance>
-  </sentence>
-  <sentence>
-    <utterance end="14.72" start="14.0">
+    <utterance end="18.0" start="5.0">
       <token>När</token>
       <token>jag</token>
       <token>kommer</token>
       <token>ut</token>
       <token>på</token>
       <token>trappan</token>
-    </utterance>
-    <utterance end="18.0" start="14.76">
       <token>har</token>
       <token>jag</token>
       <token>solen</token>
@@ -25,7 +20,7 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="21.82" start="18.0">
+    <utterance end="26.0" start="18.0">
       <token>Nog</token>
       <token>är</token>
       <token>det</token>
@@ -33,8 +28,7 @@
       <token>morgon</token>
       <token>i</token>
       <token>juli</token>
-    </utterance>
-    <utterance end="25.98" start="21.82">
+      <token>,</token>
       <token>men</token>
       <token>en</token>
       <token>morgon</token>
@@ -47,46 +41,43 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="29.86" start="25.98">
+    <utterance end="30.0" start="26.0">
       <token>Vintergatan</token>
       <token>har</token>
       <token>i</token>
       <token>natt</token>
-      <token>passiv</token>
-    </utterance>
-    <utterance end="36.14" start="30.0">
-      <token>genom</token>
-      <token>trädgården</token>
-      <token>,</token>
-      <token>förskildrat</token>
-      <token>mina</token>
-      <token>dillkronor</token>
-      <token>och</token>
-      <token>har</token>
-      <token>kvarlämnat</token>
-      <token>en</token>
-      <token>stjärna</token>
-    </utterance>
-    <utterance end="38.18" start="36.4">
-      <token>i</token>
-      <token>varje</token>
-      <token>daggkåpa</token>
+      <token>passion</token>
       <token>.</token>
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="41.52" start="38.44">
-      <token>Härnöskomet</token>
+    <utterance end="38.1" start="30.0">
+      <token>förskildrat</token>
+      <token>mina</token>
+      <token>dildkronor</token>
+      <token>och</token>
+      <token>kvarlämnat</token>
+      <token>en</token>
+      <token>stjärna</token>
+      <token>i</token>
+      <token>varje</token>
+      <token>Dacoba</token>
+      <token>.</token>
+    </utterance>
+  </sentence>
+  <sentence>
+    <utterance end="41.72" start="38.62">
+      <token>Hallesgomet</token>
       <token>har</token>
       <token>fastnat</token>
       <token>i</token>
       <token>en</token>
-      <token>buske</token>
+      <token>enbuske</token>
       <token>.</token>
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="47.66" start="43.82">
+    <utterance end="48.08" start="43.96">
       <token>Jag</token>
       <token>stöder</token>
       <token>mig</token>
@@ -96,68 +87,83 @@
       <token>jag</token>
       <token>påstår</token>
     </utterance>
-    <utterance end="49.78" start="47.92">
+    <utterance end="54.36" start="48.08">
       <token>det</token>
       <token>är</token>
       <token>oförklarligt</token>
-    </utterance>
-    <utterance end="56.34" start="50.2">
-      <token>att</token>
-      <token>oförklarlikt</token>
-      <token>,</token>
-      <token>iders</token>
+      <token>och</token>
+      <token>oförklarligt</token>
+      <token>i</token>
+      <token>dess</token>
       <token>toftlösa</token>
       <token>,</token>
-      <token>interstilla</token>
-      <token>ära</token>
     </utterance>
-    <utterance end="59.82" start="56.34">
-      <token>sjunger</token>
+    <utterance end="56.44" start="54.36">
+      <token>interstillära</token>
+      <token>.</token>
+    </utterance>
+  </sentence>
+  <sentence>
+    <utterance end="59.76" start="56.44">
+      <token>Sjunger</token>
       <token>en</token>
       <token>fågel</token>
-      <token>,</token>
       <token>som</token>
       <token>jag</token>
       <token>inte</token>
       <token>ser</token>
+      <token>.</token>
     </utterance>
-    <utterance end="63.02" start="60.42">
-      <token>Och</token>
+  </sentence>
+  <sentence>
+    <utterance end="64.16" start="60.0">
+      <token>och</token>
       <token>vars</token>
       <token>namn</token>
       <token>jag</token>
       <token>inte</token>
       <token>känner</token>
+      <token>.</token>
     </utterance>
-    <utterance end="68.0" start="64.88">
+  </sentence>
+  <sentence>
+    <utterance end="68.56" start="64.32">
       <token>Inte</token>
       <token>finns</token>
       <token>det</token>
-      <token>himmelsdag</token>
-      <token>,</token>
-      <token>himmelsväggar</token>
-    </utterance>
-    <utterance end="73.12" start="68.9">
-      <token>men</token>
       <token>himmelstak</token>
       <token>,</token>
       <token>himmelsväggar</token>
+      <token>.</token>
+    </utterance>
+  </sentence>
+  <sentence>
+    <utterance end="71.96" start="68.72">
+      <token>Men</token>
+      <token>himmelsstak</token>
+      <token>,</token>
+      <token>himmelsväggar</token>
+    </utterance>
+    <utterance end="78.04" start="72.12">
       <token>finns</token>
       <token>det</token>
       <token>nog</token>
-    </utterance>
-    <utterance end="77.1" start="73.44">
       <token>som</token>
       <token>återskallar</token>
+      <token>,</token>
       <token>återskänker</token>
+      <token>.</token>
     </utterance>
-    <utterance end="81.1" start="78.3">
+  </sentence>
+  <sentence>
+    <utterance end="82.04" start="78.2">
       <token>Jag</token>
       <token>har</token>
       <token>sett</token>
       <token>detta</token>
       <token>ljus</token>
       <token>förr</token>
+      <token>.</token>
     </utterance>
   </sentence>
 </text>

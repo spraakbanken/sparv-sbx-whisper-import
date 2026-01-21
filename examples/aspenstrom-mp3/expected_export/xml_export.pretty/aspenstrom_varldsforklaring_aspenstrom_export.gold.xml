@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<text model_size="tiny" model_verbosity="standard" source_filename="aspenstrom_varldsforklaring_aspenstrom.mp3">
+<text model_size="tiny" model_verbosity="standard" source_filename="aspenstrom_varldsforklaring_aspenstrom.mp3" temperature="0.5">
   <sentence>
     <utterance end="6.0" start="0.0">
       <token>Världsförklaring</token>
@@ -7,7 +7,7 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="18.0" start="11.0">
+    <utterance end="18.0" start="12.0">
       <token>När</token>
       <token>jag</token>
       <token>kommer</token>
@@ -31,7 +31,6 @@
       <token>morgon</token>
       <token>i</token>
       <token>juli</token>
-      <token>,</token>
       <token>men</token>
       <token>en</token>
       <token>morgon</token>
@@ -49,13 +48,15 @@
       <token>har</token>
       <token>i</token>
       <token>natt</token>
-      <token>passi</token>
+      <token>passiv</token>
       <token>.</token>
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="38.16" start="30.0">
-      <token>försilvrat</token>
+    <utterance end="38.0" start="30.0">
+      <token>Jag</token>
+      <token>har</token>
+      <token>skildrat</token>
       <token>mina</token>
       <token>dillkronor</token>
       <token>och</token>
@@ -64,13 +65,14 @@
       <token>stjärna</token>
       <token>i</token>
       <token>varje</token>
-      <token>dagkåpa</token>
+      <token>DAC-kåpa</token>
       <token>.</token>
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="41.56" start="38.16">
-      <token>Halleskomet</token>
+    <utterance end="42.0" start="38.0">
+      <token>Hallis</token>
+      <token>Khomeh</token>
       <token>har</token>
       <token>fastnat</token>
       <token>i</token>
@@ -80,7 +82,7 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="55.88" start="43.88">
+    <utterance end="56.0" start="44.0">
       <token>Jag</token>
       <token>stöder</token>
       <token>mig</token>
@@ -89,8 +91,8 @@
       <token>när</token>
       <token>jag</token>
       <token>påstår</token>
-      <token>”</token>
-      <token>Det</token>
+      <token>att</token>
+      <token>det</token>
       <token>är</token>
       <token>oförklarligt</token>
       <token>och</token>
@@ -104,7 +106,7 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="60.0" start="55.88">
+    <utterance end="60.0" start="56.0">
       <token>Sjunger</token>
       <token>en</token>
       <token>fågel</token>
@@ -116,7 +118,7 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="64.28" start="60.0">
+    <utterance end="64.08" start="60.0">
       <token>och</token>
       <token>vars</token>
       <token>namn</token>
@@ -127,7 +129,7 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="68.68" start="64.44">
+    <utterance end="68.48" start="64.24">
       <token>Inte</token>
       <token>finns</token>
       <token>det</token>
@@ -138,16 +140,17 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="73.16" start="68.84">
+    <utterance end="73.2" start="68.64">
       <token>Men</token>
       <token>himmelsdag</token>
       <token>,</token>
       <token>himmelsväggar</token>
+      <token>,</token>
       <token>finns</token>
       <token>det</token>
       <token>nog</token>
     </utterance>
-    <utterance end="78.08" start="73.32">
+    <utterance end="78.04" start="73.36">
       <token>som</token>
       <token>återskallar</token>
       <token>,</token>
@@ -156,7 +159,7 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="81.88" start="78.24">
+    <utterance end="82.24" start="78.2">
       <token>Jag</token>
       <token>har</token>
       <token>sett</token>

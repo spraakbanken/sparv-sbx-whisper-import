@@ -99,6 +99,7 @@ def transcribe_audio(
         "text:source_filename",
         "text:model_size",
         "text:model_verbosity",
+        "text:temperature",
         "utterance",
         "utterance:start",
         "utterance:end",
@@ -111,6 +112,7 @@ def transcribe_audio(
     Output("text:source_filename", source_file=source_file).write([source_file_name])
     Output("text:model_size", source_file=source_file).write([model_size])
     Output("text:model_verbosity", source_file=source_file).write([model_verbosity])
+    Output("text:temperature", source_file=source_file).write([temperature])
     Output("utterance", source_file=source_file).write(utterance_spans)
     Output("utterance:start", source_file=source_file).write(utterance_starts)
     Output("utterance:end", source_file=source_file).write(utterance_ends)

@@ -108,6 +108,8 @@ sbx_whisper_import:
   # One of "subtitle", "standard" or "strict" (low verbosity to high verbosity)
   # NOTE: model size "medium" does support the verbosity "subtitle"
   model_verbosity: standard
+  # A value between 0.0 and 1.0, defaults to 0.0.
+  temperature: 0.0
 
 export:
   annotations:
