@@ -27,7 +27,7 @@ configargparse==1.7.1
     # via snakemake
 connection-pool==0.0.3
     # via snakemake
-coverage==7.10.4
+coverage==7.12.0
     # via pytest-cov
 datrie==0.8.2
     # via snakemake
@@ -41,7 +41,7 @@ emoji==2.14.1
     # via stanza
 fastjsonschema==2.21.2
     # via nbformat
-filelock==3.19.1
+filelock==3.20.3
     # via
     #   huggingface-hub
     #   torch
@@ -178,11 +178,11 @@ pypdfium2==4.30.0
     # via sparv
 pyreadline3==3.5.4 ; sys_platform == 'win32'
     # via humanfriendly
-pytest==8.4.1
+pytest==9.0.1
     # via
     #   pytest-cov
     #   syrupy
-pytest-cov==6.2.1
+pytest-cov==7.0.0
 python-dateutil==2.9.0
     # via sparv
 python-json-logger==3.3.0
@@ -248,7 +248,7 @@ stopit==1.1.2
     # via snakemake
 sympy==1.14.0
     # via torch
-syrupy==4.9.1
+syrupy==5.0.0
 tabulate==0.9.0
     # via snakemake
 throttler==1.2.2
@@ -287,7 +287,7 @@ typing-extensions==4.14.1
     #   typing-inspect
 typing-inspect==0.9.0
     # via sparv
-urllib3==2.5.0
+urllib3==2.6.3
     # via requests
 wcwidth==0.2.13
     # via prompt-toolkit
