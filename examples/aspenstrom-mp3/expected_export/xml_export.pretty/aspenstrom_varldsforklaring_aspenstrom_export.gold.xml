@@ -49,15 +49,12 @@
       <token>har</token>
       <token>i</token>
       <token>natt</token>
-      <token>passiv</token>
+      <token>passi</token>
       <token>.</token>
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="38.0" start="30.0">
-      <token>genom</token>
-      <token>trädgården</token>
-      <token>,</token>
+    <utterance end="38.16" start="30.0">
       <token>försilvrat</token>
       <token>mina</token>
       <token>dillkronor</token>
@@ -67,12 +64,12 @@
       <token>stjärna</token>
       <token>i</token>
       <token>varje</token>
-      <token>dackkåpa</token>
+      <token>dagkåpa</token>
       <token>.</token>
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="42.0" start="38.0">
+    <utterance end="41.56" start="38.16">
       <token>Halleskomet</token>
       <token>har</token>
       <token>fastnat</token>
@@ -83,7 +80,7 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="48.0" start="43.0">
+    <utterance end="55.88" start="43.88">
       <token>Jag</token>
       <token>stöder</token>
       <token>mig</token>
@@ -92,11 +89,7 @@
       <token>när</token>
       <token>jag</token>
       <token>påstår</token>
-      <token>.</token>
-    </utterance>
-  </sentence>
-  <sentence>
-    <utterance end="56.0" start="48.0">
+      <token>”</token>
       <token>Det</token>
       <token>är</token>
       <token>oförklarligt</token>
@@ -111,7 +104,7 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="60.0" start="56.0">
+    <utterance end="60.0" start="55.88">
       <token>Sjunger</token>
       <token>en</token>
       <token>fågel</token>
@@ -123,7 +116,7 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="64.4" start="60.0">
+    <utterance end="64.28" start="60.0">
       <token>och</token>
       <token>vars</token>
       <token>namn</token>
@@ -134,7 +127,7 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="68.8" start="64.56">
+    <utterance end="68.68" start="64.44">
       <token>Inte</token>
       <token>finns</token>
       <token>det</token>
@@ -145,7 +138,7 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="73.2" start="68.96">
+    <utterance end="73.16" start="68.84">
       <token>Men</token>
       <token>himmelsdag</token>
       <token>,</token>
@@ -154,7 +147,7 @@
       <token>det</token>
       <token>nog</token>
     </utterance>
-    <utterance end="78.08" start="73.36">
+    <utterance end="78.08" start="73.32">
       <token>som</token>
       <token>återskallar</token>
       <token>,</token>
@@ -163,7 +156,7 @@
     </utterance>
   </sentence>
   <sentence>
-    <utterance end="82.24" start="78.24">
+    <utterance end="81.88" start="78.24">
       <token>Jag</token>
       <token>har</token>
       <token>sett</token>

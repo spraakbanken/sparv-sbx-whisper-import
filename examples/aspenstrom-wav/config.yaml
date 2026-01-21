@@ -9,6 +9,7 @@ import:
 sbx_whisper_import:
   model_size: tiny
   model_verbosity: standard
+  temperature: 1
 
 export:
   annotations:
