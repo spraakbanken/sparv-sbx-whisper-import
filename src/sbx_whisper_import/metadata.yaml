@@ -50,7 +50,7 @@ short_description:
 created: 2025-09-04
 creators:
   - KB-Labb
-updated: 2025-11-20
+updated: 2026-01-21
 plugin_url: https://github.com/spraakbanken/sparv-sbx-whisper-import
 type: utility
 license: MIT

@@ -1,6 +1,6 @@
 [project]
 name = "sparv-sbx-whisper-import"
-version = "0.1.1"
+version = "0.2.0"
 description = "Allow Sparv to import audio as text with KB Whisper"
 readme = "README.md"
 authors = [
