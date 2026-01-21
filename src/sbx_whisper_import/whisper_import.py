@@ -19,7 +19,7 @@ def parse_mp3(
     source_dir: Source = Source(),
     model_size: str = Config("sbx_whisper_import.model_size"),
     model_verbosity: str = Config("sbx_whisper_import.model_verbosity"),
-    temperature: float = Config("sbx_whisper_import.temperature"),
+    temperature: float = Config("sbx_whisper_import.temperature"),  # type: ignore[assignment]
 ) -> None:
     """Transcribe mp3 file as input to Sparv."""
     transcribe_audio(
@@ -43,7 +43,7 @@ def parse_ogg(
     source_dir: Source = Source(),
     model_size: str = Config("sbx_whisper_import.model_size"),
     model_verbosity: str = Config("sbx_whisper_import.model_verbosity"),
-    temperature: float = Config("sbx_whisper_import.temperature"),
+    temperature: float = Config("sbx_whisper_import.temperature"),  # type: ignore[assignment]
 ) -> None:
     """Transcribe ogg file as input to Sparv."""
     transcribe_audio(
@@ -67,7 +67,7 @@ def parse_wav(
     source_dir: Source = Source(),
     model_size: str = Config("sbx_whisper_import.model_size"),
     model_verbosity: str = Config("sbx_whisper_import.model_verbosity"),
-    temperature: float = Config("sbx_whisper_import.temperature"),
+    temperature: float = Config("sbx_whisper_import.temperature"),  # type: ignore[assignment]
 ) -> None:
     """Transcribe wav file as input to Sparv."""
     transcribe_audio(

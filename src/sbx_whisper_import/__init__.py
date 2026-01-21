@@ -21,8 +21,8 @@ __config__ = [
     ),
     Config(
         "sbx_whisper_import.temperature",
-        0,
-        description="The temperature between 0 and 1 controlling randomness. Defaults to 0",
+        0.0,
+        description="The temperature between 0.0 and 1.0 controlling randomness. Defaults to 0.0",
         datatype=float,
     ),
 ]
