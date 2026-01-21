@@ -68,6 +68,12 @@ else
   INVENV =
 endif
 
+ifeq (${CI},)
+  DIFF = difft --exit-code
+else
+  DIFF = diff
+endif
+
 default_cov := "--cov=${PROJECT_SRC}"
 cov_report := "term-missing"
 cov := ${default_cov}
@@ -206,25 +212,25 @@ prepare-assets: download-audio\
 test-aspenstrom-mp3:
 	rm -rf examples/aspenstrom-mp3/.snakemake examples/aspenstrom-mp3/export examples/aspenstrom-mp3/sparv-workdir
 	cd examples/aspenstrom-mp3; ${INVENV} sparv run --stats
-	diff examples/aspenstrom-mp3/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml\
+	${DIFF} examples/aspenstrom-mp3/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml\
 	    examples/aspenstrom-mp3/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml
-	diff examples/aspenstrom-mp3/export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.xml\
+	${DIFF} examples/aspenstrom-mp3/export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.xml\
 	    examples/aspenstrom-mp3/expected_export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.gold.xml
 
 test-aspenstrom-ogg:
 	rm -rf examples/aspenstrom-ogg/.snakemake examples/aspenstrom-ogg/export examples/aspenstrom-ogg/sparv-workdir
 	cd examples/aspenstrom-ogg; ${INVENV} sparv run --stats --log-to-file debug
-	diff examples/aspenstrom-ogg/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml\
+	${DIFF} examples/aspenstrom-ogg/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml\
 	    examples/aspenstrom-ogg/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml
-	diff examples/aspenstrom-ogg/export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.xml\
+	${DIFF} examples/aspenstrom-ogg/export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.xml\
 	    examples/aspenstrom-ogg/expected_export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.gold.xml
 
 test-aspenstrom-wav:
 	rm -rf examples/aspenstrom-wav/.snakemake examples/aspenstrom-wav/export examples/aspenstrom-wav/sparv-workdir
 	cd examples/aspenstrom-wav; ${INVENV} sparv run --stats
-	diff examples/aspenstrom-wav/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml\
+	${DIFF} examples/aspenstrom-wav/export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.xml\
 	    examples/aspenstrom-wav/expected_export/xml_export.pretty/aspenstrom_varldsforklaring_aspenstrom_export.gold.xml
-	diff examples/aspenstrom-wav/export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.xml\
+	${DIFF} examples/aspenstrom-wav/export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.xml\
 	    examples/aspenstrom-wav/expected_export/xml_export.pretty/aspenstrom_trappan_aspenstrom_export.gold.xml
 
 test-examples: test-aspenstrom-mp3 test-aspenstrom-wav
