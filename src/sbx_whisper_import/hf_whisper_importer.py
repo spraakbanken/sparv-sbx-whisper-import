@@ -59,7 +59,9 @@ _SIZE_TO_MODEL_NAME: dict[str, dict[str, _ModelInfo]] = {
 class HFWhisperImporter:
     """Huggingface whisper importer."""
 
-    def __init__(self, *, model_size: str, model_verbosity: str = "default", verbose: bool = False, temperature: float = 0) -> None:
+    def __init__(
+        self, *, model_size: str, model_verbosity: str = "default", verbose: bool = False, temperature: float = 0
+    ) -> None:
         """Huggingface importer using whisper.
 
         Args:
@@ -108,11 +110,7 @@ class HFWhisperImporter:
             ignore_warning=not verbose,
         )
 
-        generate_kwargs = {
-            "task": "transcribe",
-            "language": "sv",
-            "temperature": temperature
-        }
+        generate_kwargs = {"task": "transcribe", "language": "sv", "temperature": temperature}
 
         self._pipe: AutomaticSpeechRecognitionPipeline = pipe
         self._generate_kwargs = generate_kwargs
